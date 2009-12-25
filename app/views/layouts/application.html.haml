@@ -1,0 +1,42 @@
+!!!
+%html(lang='pt-BR')
+  %head
+    %meta(charset='utf-8')
+    %title RailsMG
+
+    = javascript_include_tag 'prototype', 'application', :cache => 'common'
+
+    = stylesheet_link_tag 'reset5', 'yui/reset', 'yui/fonts', 'yui/base', 'yui/grids', 'formtastic', :cache => 'common'
+    = stylesheet_link_tag 'application'
+
+    /[if IE 6]
+      = stylesheet_link_tag 'ie6'
+
+  %body
+    .yui-d-custom
+      %nav#login
+        #{link_to_function 'login'} ou #{link_to_function 'cadastro'}
+
+      %header#hd
+        %h1 rails<span>mg</span>
+
+        %nav#nav
+          %ul
+            %li= link_to 'Home', root_path, :class => 'active'
+            %li= link_to_function 'Membros'
+            %li= link_to_function 'Projetos'
+            %li= link_to_function 'Encontros'
+
+      #content{ :class => controller.controller_name }
+        = yield
+
+      %footer#ft
+        %h2 apoio
+
+        %ul
+          %li.first= link_to_function 'apoio'
+          %li= link_to_function 'apoio'
+          %li= link_to_function 'apoio'
+          %li= link_to_function 'apoio'
+          %li= link_to_function 'apoio'
+

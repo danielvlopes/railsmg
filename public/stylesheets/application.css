@@ -1,2 +1,112 @@
-@import "global.css";
+html {
+  background: #c2d3da;
+  color: #1c4f66; }
 
+a {
+  color: #C15559;
+  text-decoration: underline; }
+  a:hover {
+    text-decoration: none; }
+
+h2 {
+  color: #51717f;
+  text-transform: uppercase; }
+
+.yui-d-custom {
+  margin: auto;
+  text-align: left;
+  width: 70.76em;
+  *width: 69em;
+  min-width: 920px; }
+
+#login {
+  margin-top: 1em;
+  text-align: right; }
+
+#hd {
+  background: #FFF;
+  behavior: url(/stylesheets/border-radius.htc);
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  box-shadow: 1px 1px 1px #9ab3ba;
+  -moz-box-shadow: 1px 1px 1px #9ab3ba;
+  -webkit-box-shadow: 1px 1px 1px #9ab3ba;
+  height: 60px;
+  line-height: 60px;
+  margin: 1em 0; }
+  #hd h1 {
+    background: url(../images/ruby.png) no-repeat;
+    color: #51717f;
+    font-size: 197%;
+    line-height: 90px;
+    margin: 0;
+    position: absolute;
+    margin-left: -30px;
+    margin-top: -15px;
+    padding-left: 100px; }
+  #hd span {
+    color: #af1f24; }
+
+#nav {
+  float: right; }
+  #nav ul {
+    margin: 0; }
+  #nav li {
+    display: inline;
+    margin-right: 2em; }
+  #nav a {
+    color: #50707e;
+    font-size: 123.1%;
+    text-transform: uppercase;
+    text-decoration: none; }
+    #nav a.active, #nav a:hover {
+      color: #C15559; }
+
+#content {
+  padding: 10px 0; }
+  #content .box {
+    background: #abc6d1;
+    behavior: url(/stylesheets/border-radius.htc);
+    border-radius: 7px;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    padding: 1px 10px; }
+    #content .box h2 {
+      border-bottom: 2px solid #c0d4dd;
+      padding-bottom: .5em;
+      margin-bottom: .5em; }
+    #content .box p ~ h2 {
+      margin-top: 2em; }
+
+.home .sidebar {
+  text-align: center; }
+
+#ft {
+  background: #FFF;
+  behavior: url(/stylesheets/border-radius.htc);
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  box-shadow: 1px 1px 1px #9ab3ba;
+  -moz-box-shadow: 1px 1px 1px #9ab3ba;
+  -webkit-box-shadow: 1px 1px 1px #9ab3ba;
+  padding: 5px 13px 10px; }
+  #ft h2 {
+    font-size: 100%;
+    font-weight: normal;
+    margin: 0 0 .5em;
+    text-transform: none; }
+  #ft ul {
+    margin: 0;
+    text-align: center; }
+  #ft li {
+    display: inline;
+    margin-left: 25px; }
+    #ft li.first {
+      margin-left: 0; }
+  #ft a {
+    background: #E6E6E6;
+    display: inline-block;
+    line-height: 82px;
+    width: 155px; }

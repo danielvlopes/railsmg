@@ -1,0 +1,64 @@
+@import mixins.sass
+
+form
+  ol
+    margin: 0
+
+  li
+    list-style: none
+    margin-bottom: .8em
+
+  label
+    cursor: pointer
+    float: left
+    width: 25%
+
+  input[type="text"], input[type="password"], select, textarea
+    background: #FFF url(../images/form_input.gif) repeat-x
+    border: 1px solid #CACACA
+    padding: 4px
+    width: 40%
+
+  input[type="checkbox"]
+    margin-right: 3px
+
+  input[type="submit"], input[type="button"]
+    background: url(../images/form_button.gif) repeat-x
+    +border-radius(5px)
+    border: 1px solid #C1C1C1
+    cursor: pointer
+    padding: 0 10px
+    font-size: 93%
+    height: 26px
+
+    &:hover, &:focus
+      background-position: bottom left
+      border-color: #246F9F
+      color: #FFF
+
+  select
+    width: auto
+    min-width: 20%
+
+  textarea
+    width: auto
+    min-width: 40%
+
+  .error
+    input[type="text"], input[type="password"], select, textarea
+      border-color: #F08080
+
+  .inline-errors
+    color: #C00
+    margin-top: .5em
+    padding-left: 25%
+
+  .buttons, .boolean
+    padding-left: 25%
+
+    li
+      display: inline
+
+    label
+      float: none
+

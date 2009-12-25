@@ -1,2 +1,12 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+if (Prototype.Browser.IE) {
+    (function () {
+        var e = ("abbr,article,aside,audio,canvas,datalist,details," +
+                 "figure,footer,header,hgroup,mark,menu,meter,nav,output," +
+                 "progress,section,time,video").split(',');
+
+        for (var i = 0; i < e.length; i++) {
+            document.createElement(e[i]);
+        }
+    })();
+}
+

@@ -1,0 +1,132 @@
+@import mixins.sass
+
+// CSS Reset
+html
+  background: #c2d3da
+  color: #1c4f66
+
+
+a
+  color: #C15559
+  text-decoration: underline
+
+  &:hover
+    text-decoration: none
+
+
+h2
+  color: #51717f
+  text-transform: uppercase
+
+
+// YUI 3
+.yui-d-custom
+  margin: auto
+  text-align: left
+  width: 70.76em
+  *width: 69em
+  min-width: 920px
+
+
+// Header
+#login
+  margin-top: 1em
+  text-align: right
+
+
+#hd
+  background: #FFF
+  +border-radius(5px)
+  +box-shadow(1px 1px 1px #9ab3ba)
+  height: 60px
+  line-height: 60px
+  margin: 1em 0
+
+  h1
+    background: url(../images/ruby.png) no-repeat
+    color: #51717f
+    font-size: 197%
+    line-height: 90px
+    margin: 0
+    position: absolute
+    margin-left: -30px
+    margin-top: -15px
+    padding-left: 100px
+
+  span
+    color: #af1f24
+
+
+#nav
+  float: right
+
+  ul
+    margin: 0
+
+  li
+    display: inline
+    margin-right: 2em
+
+  a
+    color: #50707e
+    font-size: 123.1%
+    text-transform: uppercase
+    text-decoration: none
+
+    &.active, &:hover
+      color: #C15559
+
+
+// Content
+#content
+  padding: 10px 0
+
+  .box
+    background: #abc6d1
+    +border-radius(7px)
+    padding: 1px 10px
+
+    h2
+      border-bottom: 2px solid #c0d4dd
+      padding-bottom: .5em
+      margin-bottom: .5em
+
+    p ~ h2
+      margin-top: 2em
+
+
+// Home
+.home .sidebar
+  text-align: center
+
+
+// Footer
+#ft
+  background: #FFF
+  +border-radius(5px)
+  +box-shadow(1px 1px 1px #9AB3BA)
+  padding: 5px 13px 10px
+
+  h2
+    font-size: 100%
+    font-weight: normal
+    margin: 0 0 .5em
+    text-transform: none
+
+  ul
+    margin: 0
+    text-align: center
+
+  li
+    display: inline
+    margin-left: 25px
+
+    &.first
+      margin-left: 0
+
+  a
+    background: #E6E6E6
+    display: inline-block
+    line-height: 82px
+    width: 155px
+
