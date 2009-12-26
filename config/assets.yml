@@ -1,0 +1,20 @@
+javascripts:
+  common:
+    - public/javascripts/prototype.js
+    - public/javascripts/application.js
+
+stylesheets:
+  common:
+    - public/stylesheets/reset5.css
+    - public/stylesheets/yui/reset.css
+    - public/stylesheets/yui/fonts.css
+    - public/stylesheets/yui/base.css
+    - public/stylesheets/yui/grids.css
+    - public/stylesheets/formtastic.css
+
+  application:
+    - public/stylesheets/application.css
+
+  ie6:
+    - public/stylesheets/ie6.css
+

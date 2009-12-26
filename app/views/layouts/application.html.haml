@@ -4,13 +4,11 @@
     %meta(charset='utf-8')
     %title RailsMG
 
-    = stylesheet_link_tag 'reset5', 'yui/reset', 'yui/fonts', 'yui/base', 'yui/grids', 'formtastic', :cache => 'common'
-    = stylesheet_link_tag 'application'
-
-    = javascript_include_tag 'prototype', 'application', :cache => 'common'
+    != include_stylesheets :common, :application
+    != include_javascripts :common
 
     /[if IE 6]
-      = stylesheet_link_tag 'ie6'
+      != include_stylesheets :ie6
 
   %body
     .yui-d-custom
