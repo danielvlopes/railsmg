@@ -4,12 +4,12 @@ h2. How to setup application
 
 You can run the this application running the following commands:
 
-  $ git clone git://github.com/danielvlopes/railsmg.git
+<pre>  $ git clone git://github.com/danielvlopes/railsmg.git
   $ cd railsmg
   $ cp config/database.yml.example config/database.yml
   $ rake gems:install
   $ rake db:migrate
-  $ ruby script/server
+  $ ruby script/server</pre>
 
 h2. How to collaborate
 
