@@ -1,0 +1,66 @@
+.box
+  %h2
+    Projetos
+
+  %p
+    Esta é a lista de 30 projetos opensource que os membros do nosso grupo participam:
+
+  %ul.members
+    - 3.times do
+      %li
+        %span.gravatar
+          = gravatar_image_tag 'user.email'
+        %h3.name
+          = link_to_function 'Daniel Lopes'
+        %span.github
+          = link_to_function '15 projetos opensource'
+
+        %ul.projects
+          %li
+            %h4
+              = link_to_function 'Tabs Helper'
+
+            %p
+              Ruby on Rails helper for tabbed interface
+
+          %li
+            %h4
+              = link_to_function 'Popwindow'
+
+            %p
+              Easy way to show hidden div as tooltip style window (simple substitution for lightbox, modal and...
+
+          %li
+            %h4
+              = link_to_function 'Dotfiles'
+
+            %p
+              Dotfiles and bin scripts for common tasks and bash settings
+
+      %li
+        %span.gravatar
+          = gravatar_image_tag 'user.email'
+        %h3.name
+          = link_to_function 'Gabriel Sobrinho'
+        %span.github
+          = link_to_function '15 projetos opensource'
+
+        %ul.projects
+          %li
+            %h4
+              = link_to_function 'CorePHP'
+            %p
+              A PHP MVC RESTful framework
+
+          %li
+            %h4
+              = link_to_function '2railsmg'
+            %p
+              Demo app using InheritedResources + HAML + Formtastic
+
+          %li
+            %h4
+              = link_to_function 'acts-as-taggable-on'
+            %p
+              A tagging plugin for Rails applications that allows for custom tagging along dynamic contexts.
+

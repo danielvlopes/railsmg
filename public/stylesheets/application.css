@@ -4,9 +4,9 @@ html {
 
 a {
   color: #C15559;
-  text-decoration: underline; }
+  text-decoration: none; }
   a:hover {
-    text-decoration: none; }
+    color: #1c4f66; }
 
 h2 {
   color: #51717f;
@@ -58,8 +58,7 @@ h2 {
   #nav a {
     color: #50707e;
     font-size: 123.1%;
-    text-transform: uppercase;
-    text-decoration: none; }
+    text-transform: uppercase; }
     #nav a.active, #nav a:hover {
       color: #C15559; }
 
@@ -79,13 +78,13 @@ h2 {
     #content .box p ~ h2 {
       margin-top: 2em; }
 
-.home .sidebar {
+#content.home .sidebar {
   text-align: center; }
 
-.members ul {
+#content.members ul {
   font-size: 123.1%;
   margin: 2em 0; }
-.members li {
+#content.members li {
   background: #F6F6F6;
   border: 2px solid #FFF;
   border-left: 0;
@@ -103,16 +102,58 @@ h2 {
   list-style: none;
   margin-bottom: 1em;
   padding: 0 20px; }
-.members span {
+#content.members span {
   float: left;
   width: 30%; }
-.members .gravatar {
+#content.members .gravatar {
   width: 10%; }
-.members .city, .members .github {
+#content.members .city, #content.members .github {
   text-align: center; }
-.members img {
+#content.members img {
   border: 1px solid #FFF;
   vertical-align: middle; }
+
+#content.projects ul.members {
+  margin: 2em 0; }
+  #content.projects ul.members > li {
+    background: #F6F6F6;
+    border: 2px solid #FFF;
+    border-left: 0;
+    border-right: 0;
+    behavior: url(/stylesheets/border-radius.htc);
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    box-shadow: 1px 1px 1px #6c8896;
+    -moz-box-shadow: 1px 1px 1px #6c8896;
+    -webkit-box-shadow: 1px 1px 1px #6c8896;
+    display: block;
+    margin-bottom: 1em;
+    padding: 0 20px; }
+#content.projects .gravatar, #content.projects .name, #content.projects .github {
+  line-height: 71px;
+  float: left;
+  font-size: 123.1%;
+  width: 45%; }
+#content.projects .gravatar {
+  width: 10%; }
+#content.projects .name {
+  font-weight: normal;
+  margin: 0; }
+#content.projects .github {
+  text-align: right; }
+#content.projects img {
+  border: 1px solid #FFF;
+  vertical-align: middle; }
+#content.projects ul.projects {
+  clear: both;
+  margin: 0; }
+  #content.projects ul.projects li {
+    list-style: none; }
+#content.projects h4 {
+  border-bottom: 1px solid #c1d4db;
+  margin-bottom: .5em;
+  padding-bottom: .5em; }
 
 #ft {
   background: #FFF;

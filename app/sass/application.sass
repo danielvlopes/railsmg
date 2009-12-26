@@ -8,10 +8,10 @@ html
 
 a
   color: #C15559
-  text-decoration: underline
+  text-decoration: none
 
   &:hover
-    text-decoration: none
+    color: #1c4f66
 
 
 h2
@@ -71,7 +71,6 @@ h2
     color: #50707e
     font-size: 123.1%
     text-transform: uppercase
-    text-decoration: none
 
     &.active, &:hover
       color: #C15559
@@ -96,12 +95,12 @@ h2
 
 
 // Home
-.home .sidebar
+#content.home .sidebar
   text-align: center
 
 
 // Members
-.members
+#content.members
   ul
     font-size: 123.1%
     margin: 2em 0
@@ -133,6 +132,55 @@ h2
   img
     border: 1px solid #FFF
     vertical-align: middle
+
+
+// Projects
+#content.projects
+  ul.members
+    margin: 2em 0
+
+    > li
+      background: #F6F6F6
+      border: 2px solid #FFF
+        left: 0
+        right: 0
+      +border-radius(5px)
+      +box-shadow(1px 1px 1px #6c8896)
+      display: block
+      margin-bottom: 1em
+      padding: 0 20px
+
+  .gravatar, .name, .github
+    line-height: 71px
+    float: left
+    font-size: 123.1%
+    width: 45%
+
+  .gravatar
+    width: 10%
+
+  .name
+    font-weight: normal
+    margin: 0
+
+  .github
+    text-align: right
+
+  img
+    border: 1px solid #FFF
+    vertical-align: middle
+
+  ul.projects
+    clear: both
+    margin: 0
+
+    li
+      list-style: none
+
+  h4
+    border-bottom: 1px solid #c1d4db
+    margin-bottom: .5em
+    padding-bottom: .5em
 
 
 // Footer

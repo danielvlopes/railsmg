@@ -27,7 +27,7 @@
             %li
               = link_to_unless_current('Membros', members_path) { link_to 'Membros', members_path, :class => 'active' }
             %li
-              = link_to_function 'Projetos'
+              = link_to_unless_current('Projetos', projects_path) { link_to 'Projetos', projects_path, :class => 'active' }
             %li
               = link_to_function 'Encontros'
 
