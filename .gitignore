@@ -4,6 +4,7 @@ db/schema.*
 db/*.sqlite3
 doc
 log/*
+public/assets
 vendor/**/**/doc/*
 tmp/**/*
 .DS_Store
