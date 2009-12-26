@@ -1,0 +1,36 @@
+.last_meeting
+  .image
+    = image_tag 'http://i.imagehost.org/0853/Sem_t_tulo.jpg', :alt => 'Slide preview'
+
+  %h2 Último encontro
+
+  %p
+    Agilize o desenvolvimento da sua interface administrativa utilizando
+    o Formtastic para criar formulários, HAML + SASS para simplificar
+    o HTML e CSS e o InheritedResources para os controllers "scaffold".
+
+  %h3 Conteúdo
+
+  %p
+    = [link_to_function('Vídeo'), link_to_function('Slides'), link_to_function('Código fonte')].to_sentence
+
+.box
+  %h2 Apresentações anteriores
+
+  %ul
+    - 3.times do
+      %li
+        .image
+          = image_tag 'http://i.imagehost.org/0179/Sem_t_tulo_2.jpg', :alt => 'Slide preview'
+
+        %h3
+          Formtastic + HAML + SASS + InheritedResources
+
+        %p
+          Agilize o desenvolvimento da sua interface administrativa utilizando
+          o Formtastic para criar formulários, HAML + SASS para simplificar
+          o HTML e CSS e o InheritedResources para os controllers "scaffold".
+
+        %p
+          = [link_to_function('Vídeo'), link_to_function('Slides'), link_to_function('Código fonte')].to_sentence
+

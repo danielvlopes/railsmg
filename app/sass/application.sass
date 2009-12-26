@@ -2,8 +2,8 @@
 
 // CSS Reset
 html
-  background: #c2d3da
-  color: #1c4f66
+  background: #C2D3DA
+  color: #1C4F66
 
 
 a
@@ -11,7 +11,7 @@ a
   text-decoration: none
 
   &:hover
-    color: #1c4f66
+    color: #1C4F66
 
 
 h2
@@ -37,23 +37,23 @@ h2
 #hd
   background: #FFF
   +border-radius(5px)
-  +box-shadow(1px 1px 1px #9ab3ba)
+  +box-shadow(1px 1px 1px #9AB3BA)
   height: 60px
   line-height: 60px
   margin: 1em 0
 
   h1
     background: url(../images/ruby.png) no-repeat
-    color: #51717f
+    color: #51717F
     font-size: 297%
     line-height: 80px
     height: 88px
     margin: -11px 0 0 -30px
-    position: absolute
     padding-left: 100px
+    position: absolute
 
   span
-    color: #af1f24
+    color: #AF1F24
 
 
 #nav
@@ -67,7 +67,7 @@ h2
     margin-right: 2em
 
   a
-    color: #50707e
+    color: #50707E
     font-size: 123.1%
     text-transform: uppercase
 
@@ -80,22 +80,23 @@ h2
   padding: 10px 0
 
   .box
-    background: #abc6d1
+    background: #ABC6D1
     +border-radius(7px)
     padding: 1px 10px
 
     h2
-      border-bottom: 2px solid #c0d4dd
+      border-bottom: 2px solid #C0D4DD
       padding-bottom: .5em
       margin-bottom: .5em
 
-    p ~ h2
-      margin-top: 2em
-
 
 // Home
-#content.home .sidebar
-  text-align: center
+#content.home
+  .box p ~ h2
+    margin-top: 2em
+
+  .sidebar
+    text-align: center
 
 
 // Members
@@ -106,11 +107,10 @@ h2
 
   li
     background: #F6F6F6
-    border: 2px solid #FFF
-      left: 0
-      right: 0
+    border-top: 2px solid #FFF
+    border-bottom: 2px solid #FFF
     +border-radius(5px)
-    +box-shadow(1px 1px 1px #6c8896)
+    +box-shadow(1px 1px 1px #6C8896)
     display: block
     line-height: 71px
     height: 71px
@@ -125,12 +125,12 @@ h2
   .gravatar
     width: 10%
 
+    img
+      border: 1px solid #FFF
+      vertical-align: middle
+
   .city, .github
     text-align: center
-
-  img
-    border: 1px solid #FFF
-    vertical-align: middle
 
 
 // Projects
@@ -140,12 +140,12 @@ h2
 
     > li
       background: #F6F6F6
-      border: 2px solid #FFF
-        left: 0
-        right: 0
+      border-top: 2px solid #FFF
+      border-bottom: 2px solid #FFF
       +border-radius(5px)
-      +box-shadow(1px 1px 1px #6c8896)
+      +box-shadow(1px 1px 1px #6C8896)
       display: block
+      list-style: none
       margin-bottom: 1em
       padding: 0 20px
 
@@ -158,6 +158,10 @@ h2
   .gravatar
     width: 10%
 
+    img
+      border: 1px solid #FFF
+      vertical-align: middle
+
   .name
     font-weight: normal
     margin: 0
@@ -165,21 +169,81 @@ h2
   .github
     text-align: right
 
-  img
-    border: 1px solid #FFF
-    vertical-align: middle
-
   ul.projects
     clear: both
     margin: 0
 
     li
+      display: block
       list-style: none
 
   h4
-    border-bottom: 1px solid #c1d4db
+    border-bottom: 1px solid #C1D4DB
     margin-bottom: .5em
     padding-bottom: .5em
+
+
+// Meetings
+#content.meetings
+  .last_meeting
+    background: #F6F6F6
+    border-top: 2px solid #FFF
+    border-bottom: 2px solid #FFF
+    +border-radius(5px)
+    +box-shadow(1px 1px 1px #6C8896)
+    height: 287px
+    margin-bottom: 1em
+    padding: 0 10px
+
+    .image
+      float: left
+      margin: .5em 2em .5em 0
+
+      img
+        border: 4px solid #C3D1DA
+        +border-radius(4px)
+        height: 267px
+        width: 345px
+
+    h2, h3
+      padding-bottom: .5em
+      margin-bottom: .5em
+      margin-left: 378px
+      border-bottom: 1px solid #C0D4DD
+      text-transform: none
+      color: #51717F
+
+    h3
+      margin-top: 3em
+
+  .box
+    ul
+      margin: 0
+
+    li
+      background: #F6F6F6
+      border-top: 2px solid #FFF
+      border-bottom: 2px solid #FFF
+      +border-radius(5px)
+      +box-shadow(1px 1px 1px #6c8896)
+      display: block
+      height: 134px
+      list-style: none
+      margin-bottom: 1em
+      padding: 0 10px
+
+    .image
+      float: left
+      margin: .5em 1em .5em 0
+
+      img
+        border: 3px solid #C3D1DA
+        +border-radius(3px)
+        width: 150px
+        height: 116px
+
+  a
+    text-transform: uppercase
 
 
 // Footer

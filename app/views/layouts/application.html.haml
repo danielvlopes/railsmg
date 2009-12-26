@@ -29,7 +29,7 @@
             %li
               = link_to_unless_current('Projetos', projects_path) { link_to 'Projetos', projects_path, :class => 'active' }
             %li
-              = link_to_function 'Encontros'
+              = link_to_unless_current('Encontros', meetings_path) { link_to 'Encontros', meetings_path, :class => 'active' }
 
       #content{ :class => controller.controller_name }
         = yield
