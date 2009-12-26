@@ -82,6 +82,38 @@ h2 {
 .home .sidebar {
   text-align: center; }
 
+.members ul {
+  font-size: 123.1%;
+  margin: 2em 0; }
+.members li {
+  background: #F6F6F6;
+  border: 2px solid #FFF;
+  border-left: 0;
+  border-right: 0;
+  behavior: url(/stylesheets/border-radius.htc);
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  box-shadow: 1px 1px 1px #6c8896;
+  -moz-box-shadow: 1px 1px 1px #6c8896;
+  -webkit-box-shadow: 1px 1px 1px #6c8896;
+  display: block;
+  line-height: 71px;
+  height: 71px;
+  list-style: none;
+  margin-bottom: 1em;
+  padding: 0 20px; }
+.members span {
+  float: left;
+  width: 30%; }
+.members .gravatar {
+  width: 10%; }
+.members .city, .members .github {
+  text-align: center; }
+.members img {
+  border: 1px solid #FFF;
+  vertical-align: middle; }
+
 #ft {
   background: #FFF;
   behavior: url(/stylesheets/border-radius.htc);
@@ -91,6 +123,7 @@ h2 {
   box-shadow: 1px 1px 1px #9ab3ba;
   -moz-box-shadow: 1px 1px 1px #9ab3ba;
   -webkit-box-shadow: 1px 1px 1px #9ab3ba;
+  margin-bottom: 2em;
   padding: 5px 13px 10px; }
   #ft h2 {
     font-size: 100%;

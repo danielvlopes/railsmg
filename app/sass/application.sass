@@ -100,11 +100,47 @@ h2
   text-align: center
 
 
+// Members
+.members
+  ul
+    font-size: 123.1%
+    margin: 2em 0
+
+  li
+    background: #F6F6F6
+    border: 2px solid #FFF
+      left: 0
+      right: 0
+    +border-radius(5px)
+    +box-shadow(1px 1px 1px #6c8896)
+    display: block
+    line-height: 71px
+    height: 71px
+    list-style: none
+    margin-bottom: 1em
+    padding: 0 20px
+
+  span
+    float: left
+    width: 30%
+
+  .gravatar
+    width: 10%
+
+  .city, .github
+    text-align: center
+
+  img
+    border: 1px solid #FFF
+    vertical-align: middle
+
+
 // Footer
 #ft
   background: #FFF
   +border-radius(5px)
   +box-shadow(1px 1px 1px #9AB3BA)
+  margin-bottom: 2em
   padding: 5px 13px 10px
 
   h2

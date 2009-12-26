@@ -1,0 +1,29 @@
+.box
+  %h2 Membros
+
+  %p
+    Procurando bons desenvolvedores, designers ou pessoas relacionadas a Ruby/Rails?
+    Conheça nossos membros:
+
+  %ul
+    - 3.times do
+      %li
+        %span.gravatar
+          = gravatar_image_tag 'user.email', :alt => 'Avatar'
+        %span.name
+          = link_to_function 'Daniel Lopes'
+        %span.city
+          Belo Horizonte
+        %span.github
+          = link_to_function '15 projetos opensource'
+
+      %li
+        %span.gravatar
+          = gravatar_image_tag 'user.email', :alt => 'Avatar'
+        %span.name
+          = link_to_function 'Gabriel Sobrinho'
+        %span.city
+          Belo Horizonte
+        %span.github
+          = link_to_function '15 projetos opensource'
+

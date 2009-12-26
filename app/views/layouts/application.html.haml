@@ -22,10 +22,14 @@
 
         %nav#nav
           %ul
-            %li= link_to 'Home', root_path, :class => 'active'
-            %li= link_to_function 'Membros'
-            %li= link_to_function 'Projetos'
-            %li= link_to_function 'Encontros'
+            %li
+              = link_to_unless_current('Home', root_path) { link_to 'Home', root_path, :class => 'active' }
+            %li
+              = link_to_unless_current('Membros', members_path) { link_to 'Membros', members_path, :class => 'active' }
+            %li
+              = link_to_function 'Projetos'
+            %li
+              = link_to_function 'Encontros'
 
       #content{ :class => controller.controller_name }
         = yield
