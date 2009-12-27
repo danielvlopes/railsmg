@@ -34,7 +34,7 @@ h2 {
   -webkit-box-shadow: 1px 1px 1px #9ab3ba;
   height: 60px;
   line-height: 60px;
-  margin: 1em 0; }
+  margin: 1em 0 3em 0; }
   #hd h1 {
     background: url(../images/ruby.png) no-repeat;
     color: #51717F;
@@ -64,6 +64,7 @@ h2 {
 #content {
   padding: 10px 0; }
   #content .box {
+    font-size: 15px;
     background: #ABC6D1;
     behavior: url(/stylesheets/border-radius.htc);
     border-radius: 7px;
@@ -229,7 +230,7 @@ h2 {
   box-shadow: 1px 1px 1px #9ab3ba;
   -moz-box-shadow: 1px 1px 1px #9ab3ba;
   -webkit-box-shadow: 1px 1px 1px #9ab3ba;
-  margin-bottom: 2em;
+  margin: 2em 0 2em 0;
   padding: 5px 13px 10px; }
   #ft h2 {
     font-size: 100%;
