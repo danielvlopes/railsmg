@@ -5,7 +5,7 @@ db/*.sqlite3
 doc
 log/*
 public/assets
+.sass-cache/**
 vendor/**/**/doc/*
 tmp/**/*
 .DS_Store
-
