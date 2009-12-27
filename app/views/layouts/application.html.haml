@@ -36,9 +36,8 @@
         %h2 apoio
 
         %ul
-          %li.first= link_to_function 'apoio'
-          %li= link_to_function 'apoio'
-          %li= link_to_function 'apoio'
-          %li= link_to_function 'apoio'
-          %li= link_to_function 'apoio'
-
+          %li.first= link_to image_tag("sponsors/basecamp.jpg"), "http://basecamphq.com/" 
+          %li= mail_to "contato@railsmg.org", image_tag("sponsors/default.jpg")
+          %li= mail_to "contato@railsmg.org", image_tag("sponsors/default.jpg")
+          %li= mail_to "contato@railsmg.org", image_tag("sponsors/default.jpg")
+          %li= mail_to "contato@railsmg.org", image_tag("sponsors/default.jpg")

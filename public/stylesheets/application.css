@@ -80,6 +80,17 @@ h2 {
   margin-top: 2em; }
 #content.home .sidebar {
   text-align: center; }
+  #content.home .sidebar #slide-container {
+    background: url(/images/slide.jpg) no-repeat;
+    height: 488px;
+    width: 414px;
+    position: relative; }
+    #content.home .sidebar #slide-container #slide {
+      position: absolute;
+      width: 345px;
+      height: 267px;
+      top: 29px;
+      left: 34px; }
 
 #content.members ul {
   font-size: 123.1%;
@@ -248,5 +259,5 @@ h2 {
   #ft a {
     background: #E6E6E6;
     display: inline-block;
-    line-height: 82px;
+    height: 83px;
     width: 155px; }
