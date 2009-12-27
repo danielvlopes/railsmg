@@ -64,7 +64,7 @@ h2 {
 #content {
   padding: 10px 0; }
   #content .box {
-    font-size: 15px;
+    font-size: 116%;
     background: #ABC6D1;
     behavior: url(/stylesheets/border-radius.htc);
     border-radius: 7px;
