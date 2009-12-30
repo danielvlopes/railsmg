@@ -6,6 +6,9 @@ class User < ActiveRecord::Base
     config.validate_password_field = false
   end
 
+  # Associations
+  has_many :projects
+
   # Validations
   validates_presence_of :name, :email
 

@@ -11,6 +11,9 @@ describe User do
   should_have_column  :projects_count, :type => :integer, :default => 0
   should_have_indices :email, :persistence_token, :unique => true
 
+  # Associations
+  should_have_many :projects
+
   # Validations
   should_validate_presence_of :name, :email
 
