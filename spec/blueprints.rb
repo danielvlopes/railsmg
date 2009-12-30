@@ -17,3 +17,9 @@ Project.blueprint do
   description 'An example project'
 end
 
+Meeting.blueprint do
+  user        { User.make }
+  name        'Meeting example'
+  description 'An example of meeting'
+end
+

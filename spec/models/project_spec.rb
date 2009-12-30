@@ -16,9 +16,9 @@ describe Project do
   # Validations
   should_validate_presence_of :user, :name, :description
 
-  with_options :allow_blank => true do |u|
-    u.should_validate_length_of :name, :description, :in => 1..255
-    u.should_validate_uniqueness_of :name, :scope => :user_id, :case_sensitive => false
+  with_options :allow_blank => true do |p|
+    p.should_validate_length_of :name, :description, :in => 1..255
+    p.should_validate_uniqueness_of :name, :scope => :user_id, :case_sensitive => false
   end
 
   it 'to_s should return name' do
