@@ -23,3 +23,9 @@ Meeting.blueprint do
   description 'An example of meeting'
 end
 
+Meeting::Content.blueprint do
+  meeting { Meeting.make }
+  name    'Video'
+  url     'http://www.youtube.com/watch?v=xxx'
+end
+

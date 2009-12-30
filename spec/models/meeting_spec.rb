@@ -13,6 +13,7 @@ describe Meeting do
 
   # Associations
   should_belong_to :user
+  should_have_many :content, :class_name => 'Meeting::Content'
 
   # Validations
   should_validate_presence_of :user, :name, :description

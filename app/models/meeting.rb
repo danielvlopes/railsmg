@@ -1,6 +1,7 @@
 class Meeting < ActiveRecord::Base
   # Associations
   belongs_to :user
+  has_many :content, :class_name => 'Meeting::Content'
 
   # Validations
   validates_presence_of :user, :name, :description
