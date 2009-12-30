@@ -15,7 +15,7 @@ Rails::Initializer.run do |config|
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
 
   # Specify gems that this application depends on and have them installed with rake gems:install
-  config.gem 'settingslogic', :version => '2.0.3'
+  config.gem 'erubis', :version => '2.6.5'
   config.gem 'haml', :version => '2.2.15'
   config.gem 'jammit', :version => '0.3.2'
 

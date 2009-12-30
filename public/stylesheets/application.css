@@ -80,17 +80,17 @@ h2 {
   margin-top: 2em; }
 #content.home .sidebar {
   text-align: center; }
-  #content.home .sidebar #slide-container {
-    background: url(/images/slide.jpg) no-repeat;
-    height: 488px;
-    width: 414px;
-    position: relative; }
-    #content.home .sidebar #slide-container #slide {
-      position: absolute;
-      width: 345px;
-      height: 267px;
-      top: 29px;
-      left: 34px; }
+#content.home #slide {
+  background: url(/images/slide.jpg) no-repeat;
+  height: 488px;
+  position: relative;
+  width: 414px; }
+  #content.home #slide img {
+    position: absolute;
+    width: 345px;
+    height: 267px;
+    top: 29px;
+    left: 34px; }
 
 #content.members ul {
   font-size: 123.1%;
