@@ -36,8 +36,10 @@
         %h2 apoio
 
         %ul
-          %li.first= link_to image_tag("sponsors/basecamp.jpg"), "http://basecamphq.com/"
-          %li= mail_to "contato@railsmg.org", image_tag("sponsors/default.jpg")
-          %li= mail_to "contato@railsmg.org", image_tag("sponsors/default.jpg")
-          %li= mail_to "contato@railsmg.org", image_tag("sponsors/default.jpg")
-          %li= mail_to "contato@railsmg.org", image_tag("sponsors/default.jpg")
+          %li.first
+            = link_to image_tag('sponsors/basecamp.jpg', :alt => 'Basecamp'), 'http://basecamphq.com/', :popup => true
+
+          - 4.times do
+            %li
+              != mail_to 'contato@railsmg.org', image_tag('sponsors/default.jpg', :alt => 'Anuncie aqui'), :encode => :javascript
+

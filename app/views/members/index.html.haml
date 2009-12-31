@@ -6,24 +6,14 @@
     Conheça nossos membros:
 
   %ul
-    - 3.times do
+    - @users.each do |user|
       %li
         %span.gravatar
-          = gravatar_image_tag 'user.email', :alt => 'Avatar'
+          = link_to gravatar_image_tag(user.email, :alt => 'Avatar'), member_path(user)
         %span.name
-          = link_to_function 'Daniel Lopes'
+          = link_to h(user.name), member_path(user)
         %span.city
-          Belo Horizonte
+          = user.city
         %span.github
-          = link_to_function '15 projetos opensource'
-
-      %li
-        %span.gravatar
-          = gravatar_image_tag 'user.email', :alt => 'Avatar'
-        %span.name
-          = link_to_function 'Gabriel Sobrinho'
-        %span.city
-          Belo Horizonte
-        %span.github
-          = link_to_function '15 projetos opensource'
+          = link_to t('member.projects', :count => user.projects.count), projects_path(:anchor => dom_id(user))
 

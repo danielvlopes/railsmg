@@ -5,32 +5,28 @@
   %h2 Último encontro
 
   %p
-    Agilize o desenvolvimento da sua interface administrativa utilizando
-    o Formtastic para criar formulários, HAML + SASS para simplificar
-    o HTML e CSS e o InheritedResources para os controllers "scaffold".
+    = @last_meeting.description
 
   %h3 Conteúdo
 
   %p
-    != [link_to_function('Vídeo'), link_to_function('Slides'), link_to_function('Código fonte')].to_sentence
+    = content_links @last_meeting
 
 .box
   %h2 Apresentações anteriores
 
   %ul
-    - 3.times do
+    - @meetings.each do |meeting|
       %li
         .image
           = image_tag 'http://i.imagehost.org/0179/Sem_t_tulo_2.jpg', :alt => 'Slide preview'
 
         %h3
-          Formtastic + HAML + SASS + InheritedResources
+          = meeting
 
         %p
-          Agilize o desenvolvimento da sua interface administrativa utilizando
-          o Formtastic para criar formulários, HAML + SASS para simplificar
-          o HTML e CSS e o InheritedResources para os controllers "scaffold".
+          = meeting.description
 
         %p
-          != [link_to_function('Vídeo'), link_to_function('Slides'), link_to_function('Código fonte')].to_sentence
+          = content_links meeting
 

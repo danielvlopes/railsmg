@@ -5,13 +5,13 @@ pt-BR:
       default: "%d/%m/%Y"
       short: "%d de %B"
       long: "%d de %B de %Y"
-    
+
     day_names: [Domingo, Segunda, Terça, Quarta, Quinta, Sexta, Sábado]
     abbr_day_names: [Dom, Seg, Ter, Qua, Qui, Sex, Sáb]
     month_names: [~, Janeiro, Fevereiro, Março, Abril, Maio, Junho, Julho, Agosto, Setembro, Outubro, Novembro, Dezembro]
     abbr_month_names: [~, Jan, Fev, Mar, Abr, Mai, Jun, Jul, Ago, Set, Out, Nov, Dez]
     order: [ :day, :month, :year ]
-  
+
   time:
     formats:
       default: "%A, %d de %B de %Y, %H:%M h"
@@ -19,7 +19,7 @@ pt-BR:
       long: "%A, %d de %B de %Y, %H:%M h"
     am: ''
     pm: ''
-  
+
   # date helper distanci em palavras
   datetime:
     distance_in_words:
@@ -27,39 +27,39 @@ pt-BR:
       less_than_x_seconds:
         one: 'menos de 1 segundo'
         other: 'menos de {{count}} segundos'
-      
+
       x_seconds:
         one: '1 segundo'
         other: '{{count}} segundos'
-      
+
       less_than_x_minutes:
         one: 'menos de um minuto'
         other: 'menos de {{count}} minutos'
-      
+
       x_minutes:
         one: '1 minuto'
         other: '{{count}} minutos'
-      
+
       about_x_hours:
         one: 'aproximadamente 1 hora'
         other: 'aproximadamente {{count}} horas'
-      
+
       x_days:
         one: '1 dia'
         other: '{{count}} dias'
-      
+
       about_x_months:
         one: 'aproximadamente 1 mês'
         other: 'aproximadamente {{count}} meses'
-      
+
       x_months:
         one: '1 mês'
         other: '{{count}} meses'
-      
+
       about_x_years:
         one: 'aproximadamente 1 ano'
         other: 'aproximadamente {{count}} anos'
-      
+
       over_x_years:
         one: 'mais de 1 ano'
         other: 'mais de {{count}} anos'
@@ -111,7 +111,7 @@ pt-BR:
       words_connector: ", "
       two_words_connector: " e "
       last_word_connector: " e "
-    
+
   # Active Record
   activerecord:
     errors:
@@ -141,3 +141,9 @@ pt-BR:
         odd: "deve ser ímpar"
         even: "deve ser par"
         record_invalid: "A validação falhou: {{errors}}"
+
+  member:
+    projects:
+      one: "{{count}} projeto opensource"
+      other: "{{count}} projetos opensource"
+
