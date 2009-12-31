@@ -4,8 +4,8 @@ h2. How to setup application
 
 You can run the this application running the following commands:
 
-<pre>  $ git clone git://github.com/danielvlopes/railsmg.git
-  $ cd railsmg
+<pre>  $ git clone git://github.com/danielvlopes/railsmg.git && cd railsmg
+  $ git submodule init && git submodule update
   $ cp config/database.yml.example config/database.yml
   $ rake gems:install
   $ rake db:migrate
