@@ -18,14 +18,14 @@ class User < ActiveRecord::Base
 
   # Validations
   validates_presence_of :name, :email, :city
+  validates_length_of :password, :minimum => 6, :if => :require_password?
+  validates_confirmation_of :password, :if => :require_password?
 
   with_options :allow_blank => true do |u|
     u.validates_length_of :name, :city, :github, :in => 1..255
     # FIXME: u.validates_as_email :email
     u.validates_format_of :github, :with => /^[a-z_]+$/
     u.validates_uniqueness_of :email, :github, :case_sensitive => false
-    u.validates_length_of :password, :minimum => 6, :if => :require_password?
-    u.validates_confirmation_of :password, :if => :require_password?
   end
 
   def fetch_projects!
