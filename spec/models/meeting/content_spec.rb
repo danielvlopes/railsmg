@@ -13,6 +13,9 @@ describe Meeting::Content do
   # Associations
   should_belong_to :meeting
 
+  # Scopes
+  should_have_default_scope :order => 'meeting_content.name'
+
   # Validations
   should_validate_presence_of :meeting, :name, :url
 

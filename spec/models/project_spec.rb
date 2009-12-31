@@ -10,8 +10,11 @@ describe Project do
   should_have_column :user_id, :type => :integer
   should_have_index :user_id
 
+  # Scopes
+  should_have_default_scope :order => 'projects.name'
+
   # Associations
-  should_belong_to :user, :class_name => 'User'
+  should_belong_to :user, :counter_cache => true
 
   # Validations
   should_validate_presence_of :user, :name, :description

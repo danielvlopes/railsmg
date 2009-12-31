@@ -1,6 +1,9 @@
 class Project < ActiveRecord::Base
   # Associations
-  belongs_to :user
+  belongs_to :user, :counter_cache => true
+
+  # Scopes
+  default_scope :order => 'projects.name'
 
   # Validations
   validates_presence_of :user, :name, :description

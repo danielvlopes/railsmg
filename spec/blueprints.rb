@@ -4,6 +4,7 @@ User.blueprint do
   name              'Gabriel Sobrinho'
   github            'sobrinho'
   email             'gabriel@example.com'
+  city              'Belo Horizonte'
   password          { '123456' }
   password_salt     { Authlogic::Random.hex_token }
   crypted_password  { Authlogic::CryptoProviders::Sha512.encrypt(password + password_salt) }

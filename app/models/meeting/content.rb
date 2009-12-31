@@ -5,6 +5,9 @@ class Meeting::Content < ActiveRecord::Base
   # Associations
   belongs_to :meeting
 
+  # Scopes
+  default_scope :order => 'meeting_content.name'
+
   # Validations
   validates_presence_of :meeting, :name, :url
 
