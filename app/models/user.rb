@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
     unless github.blank?
       result = YAML.load open("http://github.com/api/v2/yaml/repos/show/#{github}/")
 
-      result['repositories'].reject{|r| r[:fork]}.each do |repository|
+      result['repositories'].each do |repository|
         self.projects.create! :name => repository[:name], :description => repository[:description]
       end
 
