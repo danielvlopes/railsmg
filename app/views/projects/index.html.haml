@@ -19,7 +19,7 @@
           - user.projects.each do |project|
             %li
               %h4
-                = link_to h(project), "http://github.com/#{user.github}/#{project.name}"
+                = link_to h(project), project.github_url
 
               %p
                 = project.description

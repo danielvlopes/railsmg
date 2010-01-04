@@ -113,7 +113,7 @@ h2
 
 
 // Members
-#content.members
+#content.members.index
   ul
     font-size: 123.1%
     margin: 2em 0
@@ -123,7 +123,7 @@ h2
     border-top: 2px solid #FFF
     border-bottom: 2px solid #FFF
     +border-radius(5px)
-    +box-shadow(1px 1px 1px #6C8896)
+    +box-shadow(1px 1px 2px #6C8896)
     display: block
     line-height: 71px
     height: 71px
@@ -146,6 +146,78 @@ h2
     text-align: center
 
 
+#content.members.show
+  .box h3
+    border-bottom: 2px solid #C0D4DD
+    padding-bottom: .5em
+    margin-bottom: .5em
+    color: #51717f
+    text-transform: uppercase
+
+  .member
+    background: #F6F6F6
+    border-top: 2px solid #FFF
+    border-bottom: 2px solid #FFF
+    +border-radius(5px)
+    +box-shadow(1px 1px 2px #6C8896)
+    margin-bottom: 1em
+    padding: 1em 20px
+
+  .gravatar
+    float: left
+    margin-right: 1em
+    width: 48px
+
+    img
+      height: 48px
+      border: 1px solid #FFF
+      width: 48px
+
+  .profile
+    float: left
+    width: 797px
+
+  .info
+    line-height: 24px
+
+  .using_ruby_since
+    background: url(../images/ruby.gif) center right no-repeat
+    float: right
+    padding-right: 40px
+
+  .about
+    border-top: 1px solid #C2D3DA
+    border-bottom: 1px solid #C2D3DA
+    padding-top: 1em
+    margin-bottom: 1em
+
+  ul.links
+    clear: both
+    margin: 0
+    text-align: right
+
+    li
+      display: inline
+
+  ul.projects
+    background: #F6F6F6
+    border-top: 2px solid #FFF
+    border-bottom: 2px solid #FFF
+    +border-radius(5px)
+    +box-shadow(1px 1px 2px #6C8896)
+    margin: 0 0 1em
+    padding: 1em 20px 0
+
+    li
+      display: block
+      list-style: none
+
+    h4
+      border-bottom: 1px solid #C1D4DB
+      margin-bottom: .5em
+      padding-bottom: .5em
+
+
 // Projects
 #content.projects
   ul.members
@@ -156,7 +228,7 @@ h2
       border-top: 2px solid #FFF
       border-bottom: 2px solid #FFF
       +border-radius(5px)
-      +box-shadow(1px 1px 1px #6C8896)
+      +box-shadow(1px 1px 2px #6C8896)
       display: block
       list-style: none
       margin-bottom: 1em
@@ -203,7 +275,7 @@ h2
     border-top: 2px solid #FFF
     border-bottom: 2px solid #FFF
     +border-radius(5px)
-    +box-shadow(1px 1px 1px #6C8896)
+    +box-shadow(1px 1px 2px #6C8896)
     height: 287px
     margin-bottom: 1em
     padding: 0 10px
@@ -238,7 +310,7 @@ h2
       border-top: 2px solid #FFF
       border-bottom: 2px solid #FFF
       +border-radius(5px)
-      +box-shadow(1px 1px 1px #6c8896)
+      +box-shadow(1px 1px 2px #6C8896)
       display: block
       height: 134px
       list-style: none

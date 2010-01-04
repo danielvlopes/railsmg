@@ -16,5 +16,9 @@ class Project < ActiveRecord::Base
   def to_s
     name
   end
+
+  def github_url
+    "http://github.com/#{user.github}/#{name}"
+  end
 end
 

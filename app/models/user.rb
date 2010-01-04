@@ -47,5 +47,13 @@ class User < ActiveRecord::Base
   def to_s
     name
   end
+  
+  def github_url
+    "http://github.com/#{github}"
+  end
+  
+  def twitter_url
+    "http://twitter.com/#{twitter}"
+  end
 end
 

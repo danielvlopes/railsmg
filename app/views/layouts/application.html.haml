@@ -23,13 +23,13 @@
             %li
               = link_to_unless_current('Home', root_path) { link_to 'Home', root_path, :class => 'active' }
             %li
-              = link_to_unless_current('Membros', members_path) { link_to 'Membros', members_path, :class => 'active' }
+              = link_to_unless(controller.controller_name == 'members', 'Membros', members_path) { link_to 'Membros', members_path, :class => 'active' }
             %li
               = link_to_unless_current('Projetos', projects_path) { link_to 'Projetos', projects_path, :class => 'active' }
             %li
               = link_to_unless_current('Encontros', meetings_path) { link_to 'Encontros', meetings_path, :class => 'active' }
 
-      #content{ :class => controller.controller_name }
+      #content{ :class => "#{controller.controller_name} #{controller.action_name}" }
         = yield
 
       %footer#ft
