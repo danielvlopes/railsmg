@@ -5,4 +5,3 @@ module MeetingsHelper
     end.to_sentence
   end
 end
-

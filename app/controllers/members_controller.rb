@@ -4,7 +4,7 @@ class MembersController < ApplicationController
   end
 
   def show
-    @user = User.find params[:id]
+    @user = User.find(params[:id], :include=>:projects)
   end
 end
 

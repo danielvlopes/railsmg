@@ -17,7 +17,7 @@ describe Project do
   should_belong_to :user, :counter_cache => true
 
   # Validations
-  should_validate_presence_of :user, :name, :description
+  should_validate_presence_of :user, :name
 
   with_options :allow_blank => true do |p|
     p.should_validate_length_of :name, :description, :in => 1..255

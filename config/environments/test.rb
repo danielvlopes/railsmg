@@ -30,4 +30,3 @@ config.gem 'rspec', :lib => false, :version => '1.2.9'
 config.gem 'rspec-rails', :lib => false, :version => '1.2.9'
 config.gem 'remarkable_rails', :lib => false, :version => '3.1.11'
 config.gem 'machinist', :lib => false, :version => '1.0.6'
-

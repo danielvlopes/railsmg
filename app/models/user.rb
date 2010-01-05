@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
 
   with_options :allow_blank => true do |u|
     u.validates_length_of :name, :city, :github, :in => 1..255
-    # FIXME: u.validates_as_email :email
+    u.validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
     u.validates_format_of :github, :with => /^[a-z_]+$/
     u.validates_uniqueness_of :email, :github, :case_sensitive => false
   end
@@ -47,7 +47,7 @@ class User < ActiveRecord::Base
   def to_s
     name
   end
-  
+
   def github_url
     "http://github.com/#{github}"
   end

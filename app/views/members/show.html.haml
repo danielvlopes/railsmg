@@ -14,7 +14,7 @@
           usando Ruby desde #{@user.using_ruby_since}
       
       .about
-        != simple_format h(@user.about)
+        != simple_format auto_link(h(@user.about), :link => :urls, :target => "_blank")
     
     %ul.links
       - if @user.site?

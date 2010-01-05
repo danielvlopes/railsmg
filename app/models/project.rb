@@ -6,7 +6,7 @@ class Project < ActiveRecord::Base
   default_scope :order => 'projects.name'
 
   # Validations
-  validates_presence_of :user, :name, :description
+  validates_presence_of :user, :name
 
   with_options :allow_blank => true do |u|
     u.validates_length_of :name, :description, :in => 1..255
