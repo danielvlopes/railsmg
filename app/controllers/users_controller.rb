@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   access_control do
-    allow all, :except => %w(edit update)
-    allow logged_in, :to => %w(edit update)
+    deny anonymous, :to => %w(edit update)
+    allow all
   end
   
   inherit_resources
@@ -12,7 +12,6 @@ class UsersController < ApplicationController
   
   def update
     @user = current_user
-    
     update!
   end
 end
