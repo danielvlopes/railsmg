@@ -27,6 +27,8 @@ class User < ActiveRecord::Base
     u.validates_format_of :github, :with => /^[a-z_]+$/
     u.validates_uniqueness_of :email, :github, :case_sensitive => false
   end
+  
+  after_save :fetch_projects!
 
   def fetch_projects!
     self.projects.destroy_all # Destroy current user projects
