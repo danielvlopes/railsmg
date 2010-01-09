@@ -8,6 +8,9 @@ form
     list-style: none
     margin-bottom: .8em
 
+  legend
+    color: inherit
+
   label
     cursor: pointer
     float: left
@@ -15,7 +18,7 @@ form
 
   input[type="text"], input[type="password"], select, textarea
     background: #FFF url(../images/form_input.gif) repeat-x
-    border: 1px solid #CACACA
+    border: 1px solid #9AB3BA
     padding: 4px
     width: 40%
 
@@ -25,7 +28,7 @@ form
   input[type="submit"], input[type="button"]
     background: url(../images/form_button.gif) repeat-x
     +border-radius(5px)
-    border: 1px solid #C1C1C1
+    border: 1px solid #9AB3BA
     cursor: pointer
     padding: 0 10px
     font-size: 93%
@@ -52,6 +55,20 @@ form
     color: #C00
     margin-top: .5em
     padding-left: 25%
+
+  .radio
+    ol
+      position: relative
+      top: -1.2em
+      padding-left: 25%
+
+    li
+      display: inline
+      margin-right: 1em
+
+    label
+      float: none
+      width: auto
 
   .buttons, .boolean
     padding-left: 25%

@@ -1,0 +1,19 @@
+.box
+  %h2 Editar perfil
+
+  - semantic_form_for @user do |f|
+    - f.inputs do
+      = f.input :name
+      = f.input :city
+      = f.input :github
+      = f.input :twitter
+      = f.input :site
+      = f.input :using_ruby_since
+      = f.input :about, :input_html => { :size => '40x5' }
+      = f.input :public_email, :as => :radio
+
+    - f.buttons do
+      = f.commit_button 'Atualizar'
+
+:javascript
+  document.getElementById('user_name').focus();

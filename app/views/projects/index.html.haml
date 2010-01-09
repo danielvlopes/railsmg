@@ -5,15 +5,15 @@
   %p
     Esta é a lista de #{Project.count} projetos opensource que os membros do nosso grupo participam:
 
-  %ul.members
+  %ul.users
     - @users.each do |user|
       %li{ :id => dom_id(user) }
         %span.gravatar
-          = link_to gravatar_image_tag(user.email, :alt => 'Avatar'), member_path(user)
+          = link_to gravatar_image_tag(user.email, :alt => 'Avatar'), user_path(user)
         %h3.name
-          = link_to h(user), member_path(user)
+          = link_to h(user), user_path(user)
         %span.github
-          = t 'member.projects', :count => user.projects.count
+          = t 'user.projects', :count => user.projects.count
 
         %ul.projects
           - user.projects.each do |project|

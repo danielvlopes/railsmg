@@ -10,7 +10,7 @@ pt-BR:
     abbr_day_names: [Dom, Seg, Ter, Qua, Qui, Sex, Sáb]
     month_names: [~, Janeiro, Fevereiro, Março, Abril, Maio, Junho, Julho, Agosto, Setembro, Outubro, Novembro, Dezembro]
     abbr_month_names: [~, Jan, Fev, Mar, Abr, Mai, Jun, Jul, Ago, Set, Out, Nov, Dez]
-    order: [ :day, :month, :year ]
+    order: [:day, :month, :year]
 
   time:
     formats:
@@ -20,7 +20,7 @@ pt-BR:
     am: ''
     pm: ''
 
-  # date helper distanci em palavras
+  # dinstância do tempo em palavras
   datetime:
     distance_in_words:
       half_a_minute: 'meio minuto'
@@ -71,7 +71,7 @@ pt-BR:
       minute: "Minuto"
       second: "Segundos"
 
-  # numeros
+  # números
   number:
     format:
       precision: 3
@@ -105,14 +105,14 @@ pt-BR:
           gb: "GB"
           tb: "TB"
 
-# Used in array.to_sentence.
+  # usado no Array#to_sentence
   support:
     array:
       words_connector: ", "
       two_words_connector: " e "
       last_word_connector: " e "
 
-  # Active Record
+  # ActiveRecord
   activerecord:
     errors:
       template:
@@ -142,7 +142,27 @@ pt-BR:
         even: "deve ser par"
         record_invalid: "A validação falhou: {{errors}}"
 
-  member:
+    attributes:
+      user:
+        name: "Nome"
+        email: "E-mail"
+        password: "Senha"
+        password_confirmation: "Confirme sua senha"
+        about: "Sobre você"
+        using_ruby_since: "Usando ruby desde"
+        city: "Cidade"
+        public_email: "E-mail visível para todos?"
+
+  formtastic:
+    labels:
+      user_session:
+        email: "E-mail"
+        password: "Senha"
+    actions:
+      user_session:
+        create: "Login"
+
+  user:
     projects:
       one: "{{count}} projeto opensource"
       other: "{{count}} projetos opensource"

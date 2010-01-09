@@ -13,7 +13,11 @@
   %body
     .yui-d-custom
       %nav#login
-        #{link_to_function 'login'} ou #{link_to_function 'cadastro'}
+        - if signed_in?
+          Olá, #{link_to h(current_user), current_user} | #{link_to 'Sair', logout_path}
+
+        - else
+          #{link_to 'login', login_path} ou #{link_to 'cadastro', register_path}
 
       %header#hd
         %h1 rails<span>mg</span>
@@ -21,13 +25,13 @@
         %nav#nav
           %ul
             %li
-              = link_to_unless_active 'Home', root_path
+              = link_to_with_active 'Home', root_path
             %li
-              = link_to_unless_active 'Membros', members_path
+              = link_to_with_active 'Membros', users_path
             %li
-              = link_to_unless_active 'Projetos', projects_path
+              = link_to_with_active 'Projetos', projects_path
             %li
-              = link_to_unless_active 'Encontros', meetings_path
+              = link_to_with_active 'Encontros', meetings_path
 
       #content{ :class => "#{controller.controller_name} #{controller.action_name}" }
         = yield

@@ -36,7 +36,7 @@ h2
 #hd
   background: #FFF
   +border-radius(5px)
-  +box-shadow(1px 1px 1px #9AB3BA)
+  +box-shadow(1px 1px 2px #9AB3BA)
   height: 60px
   line-height: 60px
   margin: 1em 0 3em 0
@@ -112,8 +112,8 @@ h2
       left: 34px
 
 
-// Members
-#content.members.index
+// Users
+#content.users.index
   ul
     font-size: 123.1%
     margin: 2em 0
@@ -146,7 +146,7 @@ h2
     text-align: center
 
 
-#content.members.show
+#content.users.show
   .box h3
     border-bottom: 2px solid #C0D4DD
     padding-bottom: .5em
@@ -154,7 +154,7 @@ h2
     color: #51717f
     text-transform: uppercase
 
-  .member
+  .user
     background: #F6F6F6
     border-top: 2px solid #FFF
     border-bottom: 2px solid #FFF
@@ -175,10 +175,11 @@ h2
 
   .profile
     float: left
-    width: 797px
+    width: 796px
 
   .info
     line-height: 24px
+    margin-bottom: .5em
 
   .using_ruby_since
     background: url(../images/ruby.gif) center right no-repeat
@@ -190,6 +191,11 @@ h2
     border-bottom: 1px solid #C2D3DA
     padding-top: 1em
     margin-bottom: 1em
+
+    .empty
+      text-align: center
+      font-style: italic
+      color: #A0B1B8
 
   ul.links
     clear: both
@@ -220,7 +226,7 @@ h2
 
 // Projects
 #content.projects
-  ul.members
+  ul.users
     margin: 2em 0
 
     > li
@@ -335,7 +341,7 @@ h2
 #ft
   background: #FFF
   +border-radius(5px)
-  +box-shadow(1px 1px 1px #9AB3BA)
+  +box-shadow(1px 1px 2px #9AB3BA)
   margin: 2em 0 2em 0
   padding: 5px 13px 10px
 

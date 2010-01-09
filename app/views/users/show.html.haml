@@ -1,0 +1,51 @@
+.box
+  %h2= @user
+
+  .user
+    .gravatar
+      = gravatar_image_tag @user.email
+    
+    .profile
+      .info
+        %strong= @user.name
+        (#{@user.city} - MG)
+        = link_to '(editar perfil)', edit_account_path if signed_in? and @user == current_user
+  
+        - if @user.using_ruby_since?
+          %span.using_ruby_since<
+            usando ruby desde #{@user.using_ruby_since}
+      
+      .about
+        - if @user.about?
+          != simple_format auto_link(h(@user.about), :link => :urls, :target => "_blank")
+        - else
+          %p.empty Sem descrição pessoal
+    
+    %ul.links
+      - if @user.site?
+        %li= link_to image_tag('website.jpg', :alt => 'Website'), @user.site, :rel => 'nofollow'
+        
+      - if @user.public_email?
+        %li!= mail_to @user.email, image_tag('email.jpg', :alt => 'E-mail'), :encode => :javascript
+        
+      - if @user.twitter?
+        %li= link_to image_tag('twitter.jpg', :alt => 'Twitter'), @user.twitter_url
+
+  - if @user.github?
+    %h3 Projetos OpenSource
+
+    %p
+      É autor ou participa de
+      %strong= link_to "#{@user.projects.count} projetos", @user.github_url
+      opensource no
+      %strong= link_to "Github", 'http://github.com/'
+  
+    - unless @user.projects.empty?
+      %ul.projects
+        - @user.projects.each do |project|
+          %li
+            %h4
+              = link_to h(project), project.github_url
+ 
+            %p
+              = project.description

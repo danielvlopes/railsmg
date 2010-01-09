@@ -1,11 +1,24 @@
-# Filters added to this controller apply to all controllers in the application.
-# Likewise, all the methods added will be available for all controllers.
-
 class ApplicationController < ActionController::Base
-  # helper :all # include all helpers, all the time
-  protect_from_forgery # See ActionController::RequestForgeryProtection for details
+  protect_from_forgery
+  filter_parameter_logging :password, :password_confirmation
 
-  # Scrub sensitive parameters from your log
-  filter_parameter_logging :password
+  helper_method :current_user, :signed_in?
+
+  rescue_from Acl9::AccessDenied, :with => :access_denied
+  rescue_from ActiveRecord::RecordNotFound, :with => :not_found
+
+  protected
+
+  def current_user_session
+    @current_user_session ||= UserSession.find
+  end
+
+  def current_user
+    @current_user ||= current_user_session && current_user_session.user
+  end
+
+  def signed_in?
+    current_user ? true : false
+  end
 end
 

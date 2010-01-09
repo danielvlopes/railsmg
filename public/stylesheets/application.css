@@ -29,9 +29,9 @@ h2 {
   border-radius: 5px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
-  box-shadow: 1px 1px 1px #9ab3ba;
-  -moz-box-shadow: 1px 1px 1px #9ab3ba;
-  -webkit-box-shadow: 1px 1px 1px #9ab3ba;
+  box-shadow: 1px 1px 2px #9ab3ba;
+  -moz-box-shadow: 1px 1px 2px #9ab3ba;
+  -webkit-box-shadow: 1px 1px 2px #9ab3ba;
   height: 60px;
   line-height: 60px;
   margin: 1em 0 3em 0; }
@@ -92,10 +92,10 @@ h2 {
     top: 29px;
     left: 34px; }
 
-#content.members.index ul {
+#content.users.index ul {
   font-size: 123.1%;
   margin: 2em 0; }
-#content.members.index li {
+#content.users.index li {
   background: #F6F6F6;
   border-top: 2px solid #FFF;
   border-bottom: 2px solid #FFF;
@@ -112,24 +112,24 @@ h2 {
   list-style: none;
   margin-bottom: 1em;
   padding: 0 20px; }
-#content.members.index span {
+#content.users.index span {
   float: left;
   width: 30%; }
-#content.members.index .gravatar {
+#content.users.index .gravatar {
   width: 10%; }
-  #content.members.index .gravatar img {
+  #content.users.index .gravatar img {
     border: 1px solid #FFF;
     vertical-align: middle; }
-#content.members.index .city, #content.members.index .github {
+#content.users.index .city, #content.users.index .github {
   text-align: center; }
 
-#content.members.show .box h3 {
+#content.users.show .box h3 {
   border-bottom: 2px solid #C0D4DD;
   padding-bottom: .5em;
   margin-bottom: .5em;
   color: #51717f;
   text-transform: uppercase; }
-#content.members.show .member {
+#content.users.show .user {
   background: #F6F6F6;
   border-top: 2px solid #FFF;
   border-bottom: 2px solid #FFF;
@@ -142,35 +142,40 @@ h2 {
   -webkit-box-shadow: 1px 1px 2px #6c8896;
   margin-bottom: 1em;
   padding: 1em 20px; }
-#content.members.show .gravatar {
+#content.users.show .gravatar {
   float: left;
   margin-right: 1em;
   width: 48px; }
-  #content.members.show .gravatar img {
+  #content.users.show .gravatar img {
     height: 48px;
     border: 1px solid #FFF;
     width: 48px; }
-#content.members.show .profile {
+#content.users.show .profile {
   float: left;
-  width: 797px; }
-#content.members.show .info {
-  line-height: 24px; }
-#content.members.show .using_ruby_since {
+  width: 796px; }
+#content.users.show .info {
+  line-height: 24px;
+  margin-bottom: .5em; }
+#content.users.show .using_ruby_since {
   background: url(../images/ruby.gif) center right no-repeat;
   float: right;
   padding-right: 40px; }
-#content.members.show .about {
+#content.users.show .about {
   border-top: 1px solid #C2D3DA;
   border-bottom: 1px solid #C2D3DA;
   padding-top: 1em;
   margin-bottom: 1em; }
-#content.members.show ul.links {
+  #content.users.show .about .empty {
+    text-align: center;
+    font-style: italic;
+    color: #A0B1B8; }
+#content.users.show ul.links {
   clear: both;
   margin: 0;
   text-align: right; }
-  #content.members.show ul.links li {
+  #content.users.show ul.links li {
     display: inline; }
-#content.members.show ul.projects {
+#content.users.show ul.projects {
   background: #F6F6F6;
   border-top: 2px solid #FFF;
   border-bottom: 2px solid #FFF;
@@ -183,17 +188,17 @@ h2 {
   -webkit-box-shadow: 1px 1px 2px #6c8896;
   margin: 0 0 1em;
   padding: 1em 20px 0; }
-  #content.members.show ul.projects li {
+  #content.users.show ul.projects li {
     display: block;
     list-style: none; }
-  #content.members.show ul.projects h4 {
+  #content.users.show ul.projects h4 {
     border-bottom: 1px solid #C1D4DB;
     margin-bottom: .5em;
     padding-bottom: .5em; }
 
-#content.projects ul.members {
+#content.projects ul.users {
   margin: 2em 0; }
-  #content.projects ul.members > li {
+  #content.projects ul.users > li {
     background: #F6F6F6;
     border-top: 2px solid #FFF;
     border-bottom: 2px solid #FFF;
@@ -306,9 +311,9 @@ h2 {
   border-radius: 5px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
-  box-shadow: 1px 1px 1px #9ab3ba;
-  -moz-box-shadow: 1px 1px 1px #9ab3ba;
-  -webkit-box-shadow: 1px 1px 1px #9ab3ba;
+  box-shadow: 1px 1px 2px #9ab3ba;
+  -moz-box-shadow: 1px 1px 2px #9ab3ba;
+  -webkit-box-shadow: 1px 1px 2px #9ab3ba;
   margin: 2em 0 2em 0;
   padding: 5px 13px 10px; }
   #ft h2 {
