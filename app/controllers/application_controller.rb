@@ -20,5 +20,19 @@ class ApplicationController < ActionController::Base
   def signed_in?
     current_user ? true : false
   end
+  
+  private
+  
+  def access_denied
+    if signed_in?
+      render 'static/access_denied', :status => 401
+    else
+      redirect_to login_path
+    end
+  end
+  
+  def not_found
+    render 'static/not_found', :status => 404
+  end
 end
 
