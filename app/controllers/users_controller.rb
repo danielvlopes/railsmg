@@ -6,6 +6,12 @@ class UsersController < ApplicationController
   
   inherit_resources
   
+  def create
+    create! do |success, failure|
+      success.html { render 'success' }
+    end
+  end
+  
   def edit
     @user = current_user
   end

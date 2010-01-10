@@ -2,10 +2,11 @@ require 'open-uri'
 
 class User < ActiveRecord::Base
   # Authlogic
-  acts_as_authentic do |config|
-    config.validate_email_field = false
-    config.validate_login_field = false
-    config.validate_password_field = false
+  acts_as_authentic do |c|
+    c.validate_email_field = false
+    c.validate_login_field = false
+    c.validate_password_field = false
+    c.perishable_token_valid_for = 48.hours
   end
 
   # Associations
@@ -34,7 +35,7 @@ class User < ActiveRecord::Base
   end
   
   after_save :fetch_projects!
-
+  # Fetch user projects using YAML API from Github
   def fetch_projects!
     self.projects.destroy_all # Destroy current user projects
 
@@ -51,6 +52,12 @@ class User < ActiveRecord::Base
     false # user not found, ignore
   end
 
+  after_create :deliver_signup_confirmation
+
+  def deliver_signup_confirmation
+    Notifier.deliver_signup_confirmation self
+  end
+  
   def to_s
     name
   end
@@ -63,8 +70,14 @@ class User < ActiveRecord::Base
     "http://twitter.com/#{twitter}"
   end
   
-  def activate!
-    update_attribute :active, true
+  def email_with_name
+    %{"#{name}" <#{email}>}
+  end
+  
+  def self.active! perishable_token
+    find_using_perishable_token!(perishable_token).tap do |user|
+      user.update_attribute(:active, true) if user
+    end
   end
 end
 
