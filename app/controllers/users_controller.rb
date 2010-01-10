@@ -14,5 +14,11 @@ class UsersController < ApplicationController
     @user = current_user
     update!
   end
+  
+  protected
+  
+  def collection
+    @users ||= User.active.all
+  end
 end
 

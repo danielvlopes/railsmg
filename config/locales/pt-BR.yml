@@ -158,6 +158,7 @@ pt-BR:
       user_session:
         email: "E-mail"
         password: "Senha"
+        remember_me: "Continuar conectado"
     actions:
       user_session:
         create: "Login"

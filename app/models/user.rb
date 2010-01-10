@@ -14,7 +14,12 @@ class User < ActiveRecord::Base
 
   # Scopes
   default_scope :order => 'users.name'
-  named_scope :with_project, :include => :projects, :order => 'users.name, projects.name'
+
+  named_scope :with_projects, :include => :projects, :order => 'users.name, projects.name'
+  named_scope :active, :conditions => { :active => true }
+  
+  # Attributes
+  attr_protected :active
 
   # Validations
   validates_presence_of :name, :email, :city
@@ -56,6 +61,10 @@ class User < ActiveRecord::Base
   
   def twitter_url
     "http://twitter.com/#{twitter}"
+  end
+  
+  def activate!
+    update_attribute :active, true
   end
 end
 

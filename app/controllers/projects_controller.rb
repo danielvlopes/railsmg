@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   def index
-    @users = User.with_project.all
+    @users = User.active.with_projects
   end
 end
 
