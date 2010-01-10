@@ -5,12 +5,12 @@
   %h2 Último encontro
 
   %p
-    = @last_meeting.description
+    = @last_meeting.description if @last_meeting.present?
 
   %h3 Conteúdo
 
   %p
-    = content_links @last_meeting
+    = content_links @last_meeting if @last_meeting.present?
 
 .box
   %h2 Apresentações anteriores
