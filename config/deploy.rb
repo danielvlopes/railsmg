@@ -1,10 +1,10 @@
 # APP SETTINGS
-set :application, "APPNAME"
-set :domain_name , "www.appname.com"
+set :application, "railsmg"
+set :domain_name , "railsmg.org"
 
 # GIT SETTINGS
 set :scm, :git
-set :repository,  "git@github.com:danielvlopes/REPO.git"
+set :repository,  "git@github.com:danielvlopes/railsmg.git"
 set :branch, "master"
 set :deploy_via, :remote_cache
 
@@ -22,11 +22,8 @@ role :web, domain_name
 role :db,  domain_name, :primary => true
 
 #TASKS
-task :after_update_code, :roles => [:web, :db, :app] do
-  run "chmod 755 #{release_path}/public"
-  db.upload_database_yaml
-  assets.package
-end
+after 'deploy:symlink', 'assets:jammit'
+after 'deploy:update_code', 'db:upload_database_yaml'
 
 namespace :deploy do
   # Restart passenger on deploy
@@ -38,59 +35,27 @@ namespace :deploy do
   [:start, :stop].each do |t|
     desc "#{t} task is a no-op with mod_rails"
     task t, :roles => :app do ; end
-  end
-  
-  namespace :web do
-    task :disable, :roles => :web do
-      on_rollback { rm "#{shared_path}/system/maintenance.html" }
-
-      require 'erb'
-      deadline, reason = ENV['UNTIL'], ENV['REASON']
-      maintenance = ERB.new(File.read("./app/views/layouts/maintenance.html.erb")).result(binding)
-
-      put maintenance, "#{shared_path}/system/maintenance.html", :mode => 0644
-    end
-  end  
+  end 
 end
 
 namespace :log do
   desc "tail production log files"
   task :tail, :roles => :app do
     run "tail -f #{shared_path}/log/production.log" do |channel, stream, data|
-      puts  # para uma linha extra
+      puts  # break one line
       puts "#{channel[:host]}: #{data}"
       break if stream == :err
     end
   end
 end
 
-namespace :ssh do
-  desc "upload you public ssh key"
-  task :upload_key, :roles => :app do
-    public_key_path = File.expand_path("~/.ssh/id_rsa.pub")
-    unless File.exists?(public_key_path)
-      puts %{
-        Public key not found #{public_key_path}
-        Create your key - without passphrase:
-          ssh_keygen -t rsa
-      }
-      exit 0
-    end
-    ssh_path = "/home/#{user}/.ssh"
-    run "test -d #{ssh_path} || mkdir -pm 755 #{ssh_path}"
-    upload public_key_path, "#{ssh_path}/../id_rsa.pub"
-    run "test -f #{ssh_path}/authorized_keys || touch #{ssh_path}/authorized_keys"
-    run "cat #{ssh_path}/../id_rsa.pub >> #{ssh_path}/authorized_keys"
-    run "chmod 755 #{ssh_path}/authorized_keys"
-    run "rm #{ssh_path}/../id_rsa.pub"    
-  end
-end
-
 namespace :assets do
- desc "create asset packages for production"
- task :package, :roles => :web do
-   run "cd #{current_path} && rake asset:packager:build_all"
- end
+  desc "run jammit locally and upload files to current release"
+  task :jammit, :roles => :web do
+    root_path = File.join(File.dirname(__FILE__), "..")
+    run_locally "cd #{root_path} && jammit"
+    upload "#{root_path}/public/assets", "#{current_release}/public", :via => :scp, :recursive => true
+  end
 end
 
 namespace :db do
