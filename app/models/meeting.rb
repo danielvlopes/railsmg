@@ -1,6 +1,8 @@
 class Meeting < ActiveRecord::Base
   URL_REGEXP = /^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$/ix
 
+  belongs_to :user
+
   # Upload
   has_attached_file :slide_preview, :styles => { :medium => "267x345>", :thumb => "116x150>" }
 

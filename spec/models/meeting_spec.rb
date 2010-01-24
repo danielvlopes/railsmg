@@ -12,6 +12,9 @@ describe Meeting do
   should_have_column :name, :type => :string
   should_have_column :description, :type => :text
 
+  # Associations
+  should_belong_to :user
+    
   # Scopes
   should_have_default_scope :order => 'start_on DESC'
 

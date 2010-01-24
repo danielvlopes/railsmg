@@ -39,12 +39,11 @@
         Twitter para ser lembrado dos encontros e outras atualizações.
 
   .yui-u.sidebar
-    %h2 Última apresentação
+    %h2 Próxima apresentação
 
     #slide
-      = image_tag 'http://i.imagehost.org/0853/Sem_t_tulo.jpg'
+      = image_tag @next_meeting.slide_preview.url(:medium)
 
     %p
-      <strong>Encontro 2:</strong> Formtastic + HAML + SASS + InheritedResources
-      por <strong>Gabriel Sobrinho</strong>
+      <strong>#{@next_meeting.name}:</strong> por <strong>#{@next_meeting.user.name}</strong>
 
