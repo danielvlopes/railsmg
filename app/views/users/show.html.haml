@@ -9,7 +9,8 @@
       .info
         %strong= @user.name
         (#{@user.city} - MG)
-        = link_to '(editar perfil)', edit_user_path(current_user) if signed_in? and @user == current_user
+        - if can?(:update, @user)
+          = link_to '(editar perfil)', edit_user_path(@user)
   
         - if @user.using_ruby_since?
           %span.using_ruby_since<
