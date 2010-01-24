@@ -22,6 +22,7 @@ Rails::Initializer.run do |config|
   config.gem 'haml', :version => '2.2.15'
   config.gem 'jammit', :version => '0.3.2'
   config.gem 'formtastic', :version => '0.9.7'
+  config.gem 'paperclip', :version => '2.3.1.1'
 
   config.gem 'inherited_resources', :version => '0.9.4'
 

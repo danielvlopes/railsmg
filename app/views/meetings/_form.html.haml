@@ -1,9 +1,10 @@
-- semantic_form_for @meeting do |f|
+- semantic_form_for @meeting, :html => { :multipart => true } do |f|
   - f.inputs do
     = f.input :name
     = f.input :description, :input_html => { :size => '40x5' }
     = f.input :video
     = f.input :code
+    = f.input :slide_preview
     = f.input :slides
     = f.input :start_on
 

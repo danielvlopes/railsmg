@@ -1,0 +1,7 @@
+en:
+  remarkable:
+    paperclip: 
+      have_attached_file: 
+        description: "have an attached file"
+        expectations: 
+          has_attached_file: "{{subject_name}} had {{attribute}} as an attached file"

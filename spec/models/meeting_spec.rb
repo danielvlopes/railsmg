@@ -5,6 +5,9 @@ describe Meeting do
     @meeting = Meeting.make
   end
 
+  # Upload
+  should_have_attached_file(:slide_preview, :styles => { :medium => "267x345>", :thumb => "116x150>" })  
+
   # Database
   should_have_column :name, :type => :string
   should_have_column :description, :type => :text

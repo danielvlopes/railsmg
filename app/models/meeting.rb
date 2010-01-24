@@ -1,4 +1,7 @@
 class Meeting < ActiveRecord::Base  
+  # Upload
+  has_attached_file :slide_preview, :styles => { :medium => "267x345>", :thumb => "116x150>" }
+  
   # Scopes
   default_scope :order => 'start_on DESC'
 

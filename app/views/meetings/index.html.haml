@@ -1,6 +1,6 @@
 .last_meeting
   .image
-    = image_tag 'http://i.imagehost.org/0853/Sem_t_tulo.jpg', :alt => 'Slide preview'
+    = image_tag @last_meeting.slide_preview.url(:medium)
 
   - if @last_meeting.present?
     %h2 Último encontro
@@ -22,7 +22,7 @@
     - @meetings.each do |meeting|
       %li
         .image
-          = image_tag 'http://i.imagehost.org/0179/Sem_t_tulo_2.jpg', :alt => 'Slide preview'
+          = image_tag meeting.slide_preview.url(:thumb)
 
         %h3
           = meeting 
