@@ -1,0 +1,16 @@
+.meeting
+  .image
+    = image_tag 'http://i.imagehost.org/0853/Sem_t_tulo.jpg', :alt => 'Slide preview'
+
+  - if @meeting.present?
+    %h2 #{@meeting.name}
+
+    %p
+      = @meeting.description
+
+    %h3 Conteúdo
+
+    %p
+      = link_to "VIDEO", @meeting.video, :popup => true
+      = link_to "CÓDIGO", @meeting.code, :popup => true
+      = link_to "SLIDES", @meeting.slides, :popup => true

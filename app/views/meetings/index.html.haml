@@ -2,16 +2,19 @@
   .image
     = image_tag 'http://i.imagehost.org/0853/Sem_t_tulo.jpg', :alt => 'Slide preview'
 
-  %h2 Último encontro
+  - if @last_meeting.present?
+    %h2 Último encontro
 
-  %p
-    = @last_meeting.description if @last_meeting.present?
+    %p
+      = @last_meeting.description
 
-  %h3 Conteúdo
+    %h3 Conteúdo
 
-  %p
-    = content_links @last_meeting if @last_meeting.present?
-    
+    %p
+      = link_to "VIDEO", @last_meeting.video, :popup => true
+      = link_to "CÓDIGO", @last_meeting.code, :popup => true
+      = link_to "SLIDES", @last_meeting.slides, :popup => true
+      
 .box
   %h2 Apresentações anteriores
 
@@ -25,8 +28,7 @@
           = meeting
 
         %p
-          = meeting.description
+          = truncate(meeting.description, 200)
 
         %p
-          = content_links meeting
-
+          = link_to "VEJA MAIS", meeting
