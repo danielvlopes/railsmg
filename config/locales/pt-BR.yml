@@ -152,6 +152,13 @@ pt-BR:
         using_ruby_since: "Usando ruby desde"
         city: "Cidade"
         public_email: "E-mail visível para todos?"
+      meeting:
+        name: "Nome"
+        description: "Descrição"
+        video: "Vídeo"
+        code: "Código"
+        slides: "Slides"
+        start_on: "Inicia em"
 
   formtastic:
     labels:
@@ -167,4 +174,8 @@ pt-BR:
     projects:
       one: "{{count}} projeto opensource"
       other: "{{count}} projetos opensource"
+
+  meeting:
+    one: "Encontro"
+    other: "Encontros"
 

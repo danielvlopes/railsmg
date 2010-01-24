@@ -1,20 +1,56 @@
 @import mixins.sass
 
-form
-  ol
-    margin: 0
+form.formtastic
+  margin: 0
+  padding: 0
 
-  li
+  ul, ol, li, fieldset, legend, input, textarea, select, p
+    margin: 0
+    padding: 0
+
+  fieldset
+    border: 0
+
+  em, strong
+    font-style: normal
+    font-weight: normal
+
+  ol, ul
     list-style: none
-    margin-bottom: .8em
+
+  abbr, acronym
+    border: 0
+    font-variant: normal
+
+  input, textarea, select
+    font-family: inherit
+    font-size: inherit
+    font-weight: inherit
+
+  input, textarea, select
+    font-size: 100%
 
   legend
-    color: inherit
+    color: #000
 
-  label
-    cursor: pointer
-    float: left
-    width: 25%
+  fieldset
+    display: inline-block
+
+    &.inputs
+    &.buttons
+      padding-left: 25%
+
+    ol
+    &.buttons li
+      float: left
+      padding-right: 0.5em
+
+    &:after
+      content: "."
+      display: block
+      height: 0
+      clear: both
+      visibility: hidden
 
   input[type="text"], input[type="password"], select, textarea
     background: #FFF url(../images/form_input.gif) repeat-x
@@ -78,4 +114,3 @@ form
 
     label
       float: none
-

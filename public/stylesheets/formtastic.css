@@ -1,61 +1,87 @@
-form ol {
-  margin: 0; }
-form li {
-  list-style: none;
-  margin-bottom: .8em; }
-form legend {
-  color: inherit; }
-form label {
-  cursor: pointer;
-  float: left;
-  width: 25%; }
-form input[type="text"], form input[type="password"], form select, form textarea {
-  background: #FFF url(../images/form_input.gif) repeat-x;
-  border: 1px solid #9AB3BA;
-  padding: 4px;
-  width: 40%; }
-form input[type="checkbox"] {
-  margin-right: 3px; }
-form input[type="submit"], form input[type="button"] {
-  background: url(../images/form_button.gif) repeat-x;
-  behavior: url(/stylesheets/border-radius.htc);
-  border-radius: 5px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border: 1px solid #9AB3BA;
-  cursor: pointer;
-  padding: 0 10px;
-  font-size: 93%;
-  height: 26px; }
-  form input[type="submit"]:hover, form input[type="submit"]:focus, form input[type="button"]:hover, form input[type="button"]:focus {
-    background-position: bottom left;
-    border-color: #246F9F;
-    color: #FFF; }
-form select {
-  width: auto;
-  min-width: 20%; }
-form textarea {
-  width: auto;
-  min-width: 40%; }
-form .error input[type="text"], form .error input[type="password"], form .error select, form .error textarea {
-  border-color: #F08080; }
-form .inline-errors {
-  color: #C00;
-  margin-top: .5em;
-  padding-left: 25%; }
-form .radio ol {
-  position: relative;
-  top: -1.2em;
-  padding-left: 25%; }
-form .radio li {
-  display: inline;
-  margin-right: 1em; }
-form .radio label {
-  float: none;
-  width: auto; }
-form .buttons, form .boolean {
-  padding-left: 25%; }
-  form .buttons li, form .boolean li {
-    display: inline; }
-  form .buttons label, form .boolean label {
-    float: none; }
+form.formtastic {
+  margin: 0;
+  padding: 0; }
+  form.formtastic ul, form.formtastic ol, form.formtastic li, form.formtastic fieldset, form.formtastic legend, form.formtastic input, form.formtastic textarea, form.formtastic select, form.formtastic p {
+    margin: 0;
+    padding: 0; }
+  form.formtastic fieldset {
+    border: 0; }
+  form.formtastic em, form.formtastic strong {
+    font-style: normal;
+    font-weight: normal; }
+  form.formtastic ol, form.formtastic ul {
+    list-style: none; }
+  form.formtastic abbr, form.formtastic acronym {
+    border: 0;
+    font-variant: normal; }
+  form.formtastic input, form.formtastic textarea, form.formtastic select {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit; }
+  form.formtastic input, form.formtastic textarea, form.formtastic select {
+    font-size: 100%; }
+  form.formtastic legend {
+    color: #000; }
+  form.formtastic fieldset {
+    display: inline-block; }
+    form.formtastic fieldset.buttons {
+      padding-left: 25%; }
+    form.formtastic fieldset.buttons li {
+      float: left;
+      padding-right: 0.5em; }
+    form.formtastic fieldset:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+  form.formtastic input[type="text"], form.formtastic input[type="password"], form.formtastic select, form.formtastic textarea {
+    background: #FFF url(../images/form_input.gif) repeat-x;
+    border: 1px solid #9AB3BA;
+    padding: 4px;
+    width: 40%; }
+  form.formtastic input[type="checkbox"] {
+    margin-right: 3px; }
+  form.formtastic input[type="submit"], form.formtastic input[type="button"] {
+    background: url(../images/form_button.gif) repeat-x;
+    behavior: url(/stylesheets/border-radius.htc);
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border: 1px solid #9AB3BA;
+    cursor: pointer;
+    padding: 0 10px;
+    font-size: 93%;
+    height: 26px; }
+    form.formtastic input[type="submit"]:hover, form.formtastic input[type="submit"]:focus, form.formtastic input[type="button"]:hover, form.formtastic input[type="button"]:focus {
+      background-position: bottom left;
+      border-color: #246F9F;
+      color: #FFF; }
+  form.formtastic select {
+    width: auto;
+    min-width: 20%; }
+  form.formtastic textarea {
+    width: auto;
+    min-width: 40%; }
+  form.formtastic .error input[type="text"], form.formtastic .error input[type="password"], form.formtastic .error select, form.formtastic .error textarea {
+    border-color: #F08080; }
+  form.formtastic .inline-errors {
+    color: #C00;
+    margin-top: .5em;
+    padding-left: 25%; }
+  form.formtastic .radio ol {
+    position: relative;
+    top: -1.2em;
+    padding-left: 25%; }
+  form.formtastic .radio li {
+    display: inline;
+    margin-right: 1em; }
+  form.formtastic .radio label {
+    float: none;
+    width: auto; }
+  form.formtastic .buttons, form.formtastic .boolean {
+    padding-left: 25%; }
+    form.formtastic .buttons li, form.formtastic .boolean li {
+      display: inline; }
+    form.formtastic .buttons label, form.formtastic .boolean label {
+      float: none; }

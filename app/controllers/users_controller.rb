@@ -1,9 +1,5 @@
 class UsersController < ApplicationController
-  access_control do
-    deny anonymous, :to => %w(edit update)
-    allow all
-  end
-  
+  load_and_authorize_resource  
   inherit_resources
   
   def create

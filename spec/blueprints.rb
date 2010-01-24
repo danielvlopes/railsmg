@@ -18,7 +18,6 @@ Project.blueprint do
 end
 
 Meeting.blueprint do
-  user        { User.make }
   name        'Meeting example'
   description 'An example of meeting'
 end

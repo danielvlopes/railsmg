@@ -1,11 +1,9 @@
-class Meeting < ActiveRecord::Base
-  belongs_to :user
-  
+class Meeting < ActiveRecord::Base  
   # Scopes
   default_scope :order => 'start_on DESC'
 
   # Validations
-  validates_presence_of :user, :name, :description
+  validates_presence_of :name, :description
 
   with_options :allow_blank => true do |m|
     m.validates_length_of :name, :in => 1..255

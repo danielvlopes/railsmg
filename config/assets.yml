@@ -11,10 +11,10 @@ stylesheets:
     - public/stylesheets/yui/base.css
     - public/stylesheets/yui/grids.css
     - public/stylesheets/formtastic.css
+    - public/stylesheets/formtastic-changes.css
 
   application:
     - public/stylesheets/application.css
 
   ie6:
     - public/stylesheets/ie6.css
-

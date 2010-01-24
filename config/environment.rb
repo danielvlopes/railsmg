@@ -16,7 +16,7 @@ Rails::Initializer.run do |config|
 
   # Specify gems that this application depends on and have them installed with rake gems:install
   config.gem 'authlogic', :version => '2.1.3'
-  config.gem 'acl9', :version => '0.11.0'
+  config.gem 'cancan', :version => '1.0.2'
 
   config.gem 'erubis', :version => '2.6.5'
   config.gem 'haml', :version => '2.2.15'

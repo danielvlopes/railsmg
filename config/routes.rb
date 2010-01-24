@@ -15,7 +15,6 @@ ActionController::Routing::Routes.draw do |map|
   map.active_user 'active_user/:perishable_token', :controller => 'active_users', :action => 'active'
   
   map.resource :user_session, :as => 'session'
-  map.resource :account, :controller => 'users'
 
   # Home
   map.root :controller => 'home', :action => 'index'

@@ -6,19 +6,14 @@ describe Meeting do
   end
 
   # Database
-  should_have_column :user_id, :type => :integer
   should_have_column :name, :type => :string
   should_have_column :description, :type => :text
-  should_have_index :user_id
 
   # Scopes
   should_have_default_scope :order => 'start_on DESC'
 
-  # Associations
-  should_belong_to :user
-
   # Validations
-  should_validate_presence_of :user, :name, :description
+  should_validate_presence_of :name, :description
 
   with_options :allow_blank => true do |m|
     m.should_validate_length_of :name, :in => 1..255

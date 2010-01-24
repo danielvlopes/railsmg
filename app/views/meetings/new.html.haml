@@ -1,0 +1,17 @@
+.box
+  %h2 Cadastro
+
+  - semantic_form_for @meeting do |f|
+    - f.inputs do
+      = f.input :name
+      = f.input :description, :input_html => { :size => '40x5' }
+      = f.input :video
+      = f.input :code
+      = f.input :slides
+      = f.input :start_on
+
+    - f.buttons do
+      = f.commit_button 'Cadastrar'
+
+:javascript
+  document.getElementById('name').focus();

@@ -3,8 +3,6 @@ class ApplicationController < ActionController::Base
   filter_parameter_logging :password, :password_confirmation
 
   helper_method :current_user, :signed_in?
-
-  rescue_from Acl9::AccessDenied, :with => :access_denied
   rescue_from ActiveRecord::RecordNotFound, :with => :not_found
 
   protected

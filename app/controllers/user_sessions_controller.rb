@@ -1,9 +1,4 @@
 class UserSessionsController < ApplicationController
-  access_control do
-    allow anonymous, :to => %w(new create)
-    allow logged_in, :to => :destroy
-  end
-  
   def new
     @user_session = UserSession.new
   end

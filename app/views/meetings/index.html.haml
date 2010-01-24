@@ -11,10 +11,7 @@
 
   %p
     = content_links @last_meeting if @last_meeting.present?
-
-    - if signed_in?
-      #{link_to 'Nova apresentação', new_meeting_path}
-
+    
 .box
   %h2 Apresentações anteriores
 

@@ -11,7 +11,6 @@ class User < ActiveRecord::Base
 
   # Associations
   has_many :projects
-  has_many :meetings
 
   # Scopes
   default_scope :order => 'users.name'
@@ -79,4 +78,5 @@ class User < ActiveRecord::Base
       user.update_attribute(:active, true) if user
     end
   end
+  
 end
