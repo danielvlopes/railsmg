@@ -25,8 +25,10 @@
           = image_tag 'http://i.imagehost.org/0179/Sem_t_tulo_2.jpg', :alt => 'Slide preview'
 
         %h3
-          = meeting
-
+          = meeting 
+          - if can?(:update, meeting)
+            = link_to '(editar)', edit_meeting_path(meeting)
+            
         %p
           = truncate(meeting.description, 200)
 
