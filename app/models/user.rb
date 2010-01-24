@@ -38,19 +38,16 @@ class User < ActiveRecord::Base
 
   # Fetch user projects from Github
   def fetch_projects!
-    self.projects.destroy_all
+    projects.destroy_all
 
-    returning true do
-      if self.github?
-        result = YAML.load open("http://github.com/api/v2/yaml/repos/show/#{github}/")
+    if github?
+      result = YAML.load open("http://github.com/api/v2/yaml/repos/show/#{github}/")
 
-        result['repositories'].each do |repository|
-          self.projects.create! :name => repository[:name], :description => repository[:description]
-        end
+       result['repositories'].each do |repository|
+        projects.create! :name => repository[:name], :description => repository[:description]
       end
     end
   rescue OpenURI::HTTPError # user not found, ignore
-    false
   end
 
   after_create :deliver_signup_confirmation

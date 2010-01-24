@@ -9,7 +9,7 @@
     - @users.each do |user|
       %li{ :id => dom_id(user) }
         %span.gravatar
-          = link_to gravatar_image_tag(user.email, :alt => 'Avatar'), user_path(user)
+          = link_to gravatar_image_tag(user.email), user_path(user)
         %h3.name
           = link_to h(user), user_path(user)
         %span.github

@@ -1,0 +1,182 @@
+--- 
+repositories: 
+- :description: ActiveRecord e-mail validation for Rails 2.3
+  :forks: 0
+  :url: http://github.com/sobrinho/validates_as_email
+  :homepage: ""
+  :watchers: 1
+  :fork: true
+  :private: false
+  :open_issues: 0
+  :name: validates_as_email
+  :owner: sobrinho
+- :description: Validation of URI (URL) for ActiveRecord
+  :forks: 0
+  :url: http://github.com/sobrinho/validates_as_uri
+  :homepage: ""
+  :watchers: 1
+  :fork: false
+  :private: false
+  :open_issues: 0
+  :name: validates_as_uri
+  :owner: sobrinho
+- :description: Validation of CPF for ActiveRecord (Rails >= 2.3)
+  :forks: 1
+  :url: http://github.com/sobrinho/validates_as_cpf
+  :homepage: ""
+  :watchers: 3
+  :fork: false
+  :private: false
+  :open_issues: 0
+  :name: validates_as_cpf
+  :owner: sobrinho
+- :description: Validation of CNPJ for ActiveRecord (Rails >= 2.3)
+  :forks: 1
+  :url: http://github.com/sobrinho/validates_as_cnpj
+  :homepage: ""
+  :watchers: 2
+  :fork: false
+  :private: false
+  :open_issues: 0
+  :name: validates_as_cnpj
+  :owner: sobrinho
+- :description: Replaces <select> tags with a full-HTML, RESTful JavaScript record browser (Rails plugin)
+  :forks: 0
+  :url: http://github.com/sobrinho/recordselect
+  :homepage: http://code.google.com/p/recordselect
+  :watchers: 1
+  :fork: true
+  :private: false
+  :open_issues: 0
+  :name: recordselect
+  :owner: sobrinho
+- :description: A PHP MVC RESTful framework
+  :forks: 0
+  :url: http://github.com/sobrinho/corephp
+  :homepage: http://www.corephp.org/
+  :watchers: 1
+  :fork: false
+  :private: false
+  :open_issues: 0
+  :name: corephp
+  :owner: sobrinho
+- :description: A simple Rails wrapper for the PrinceXML PDF generation library.
+  :forks: 0
+  :url: http://github.com/sobrinho/princely
+  :homepage: http://www.mbleigh.com/plugins/princely-rails-prince-xml-wrapper
+  :watchers: 1
+  :fork: true
+  :private: false
+  :open_issues: 0
+  :name: princely
+  :owner: sobrinho
+- :description: This plugins create a form_ui and list_ui helpers for ActiveScaffold to use columns like enum
+  :forks: 0
+  :url: http://github.com/sobrinho/as_enum_column
+  :homepage: ""
+  :watchers: 4
+  :fork: false
+  :private: false
+  :open_issues: 0
+  :name: as_enum_column
+  :owner: sobrinho
+- :description: Fancy pants drag-drop sortable lists for ActiveScaffold
+  :forks: 0
+  :url: http://github.com/sobrinho/active_scaffold_sortable
+  :homepage: http://tim.theenchanter.com/2008/05/activescaffoldsortable-updated-with.html
+  :watchers: 2
+  :fork: true
+  :private: false
+  :open_issues: 0
+  :name: active_scaffold_sortable
+  :owner: sobrinho
+- :description: ActsAsTree plugin
+  :forks: 0
+  :url: http://github.com/sobrinho/acts_as_tree
+  :homepage: http://rubyonrails.org
+  :watchers: 2
+  :fork: true
+  :private: false
+  :open_issues: 0
+  :name: acts_as_tree
+  :owner: sobrinho
+- :description: RSpec Mate is a plugin to show results of specs like Textmate in Gedit
+  :forks: 0
+  :url: http://github.com/sobrinho/rspec_mate
+  :homepage: ""
+  :watchers: 1
+  :fork: true
+  :private: false
+  :open_issues: 0
+  :name: rspec_mate
+  :owner: sobrinho
+- :description: A tagging plugin for Rails applications that allows for custom tagging along dynamic contexts.
+  :forks: 0
+  :url: http://github.com/sobrinho/acts-as-taggable-on
+  :homepage: http://mbleigh.lighthouseapp.com/projects/10116-acts-as-taggable-on
+  :watchers: 1
+  :fork: true
+  :private: false
+  :open_issues: 0
+  :name: acts-as-taggable-on
+  :owner: sobrinho
+- :description: Demo app using InheritedResources + HAML + Formtastic
+  :forks: 0
+  :url: http://github.com/sobrinho/2railsmg
+  :homepage: ""
+  :watchers: 1
+  :fork: false
+  :private: false
+  :open_issues: 0
+  :name: 2railsmg
+  :owner: sobrinho
+- :description: Repository for collecting Locale data for Ruby on Rails I18n as well as other interesting, Rails related I18n stuff
+  :forks: 0
+  :url: http://github.com/sobrinho/rails-i18n
+  :homepage: http://rails-i18n.org
+  :watchers: 1
+  :fork: true
+  :private: false
+  :open_issues: 0
+  :name: rails-i18n
+  :owner: sobrinho
+- :description: Blog used in spartaonrails.com
+  :forks: 0
+  :url: http://github.com/sobrinho/spartaonrails
+  :homepage: http://spartaonrails.com/
+  :watchers: 1
+  :fork: false
+  :private: false
+  :open_issues: 0
+  :name: spartaonrails
+  :owner: sobrinho
+- :description: has_breadcrumbs is a simple plugin that adds a `breadcrumb` object into controllers and views.
+  :forks: 0
+  :url: http://github.com/sobrinho/has_breadcrumbs
+  :homepage: http://github.com/fnando/has_breadcrumbs
+  :watchers: 1
+  :fork: true
+  :private: false
+  :open_issues: 0
+  :name: has_breadcrumbs
+  :owner: sobrinho
+- :description: "railsmg website "
+  :forks: 0
+  :url: http://github.com/sobrinho/railsmg
+  :homepage: ""
+  :watchers: 1
+  :fork: true
+  :private: false
+  :open_issues: 0
+  :name: railsmg
+  :owner: sobrinho
+- :description: This plugin makes ActiveRecord models rateable through a polymorphic association
+  :forks: 0
+  :url: http://github.com/sobrinho/acts_as_rateable
+  :homepage: ""
+  :watchers: 1
+  :fork: false
+  :private: false
+  :open_issues: 0
+  :name: acts_as_rateable
+  :owner: sobrinho

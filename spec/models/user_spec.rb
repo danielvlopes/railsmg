@@ -46,6 +46,23 @@ describe User do
     subject.name = 'Gabriel Sobrinho'
     subject.to_s.should eql 'Gabriel Sobrinho'
   end
+
+  it 'github_url should return a valid github url' do
+    subject.github = 'sobrinho'
+    subject.github_url.should eql 'http://github.com/sobrinho'
+  end
+
+  it 'twitter_url should return a valid twitter url' do
+    subject.twitter = 'sobrinho'
+    subject.twitter_url.should eql 'http://twitter.com/sobrinho'
+  end
+
+  it 'fetch_projects! should fetch user projects' do
+    user = User.make
+
+    user.fetch_projects!
+    user.projects.should have(18).records
+  end
   
   it 'active! should set active as true' do
     user = User.make

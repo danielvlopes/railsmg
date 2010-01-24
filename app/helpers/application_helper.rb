@@ -1,13 +1,8 @@
 module ApplicationHelper
-  def gravatar_image_tag email, options = {}
+  def gravatar_image_tag email
     email = Digest::MD5.hexdigest(email)
     default = CGI.escape(request.protocol + request.host_with_port + image_path('gravatar.jpg'))
 
-    image_tag "http://www.gravatar.com/avatar/#{email}?size=48&default=#{default}", options
-  end
-  
-  def link_to_with_active name, options
-    link_to name, options, :class => ('active' if current_page? options)
+    image_tag "http://www.gravatar.com/avatar/#{email}?size=48&default=#{default}", :alt => 'Gravatar'
   end
 end
-
