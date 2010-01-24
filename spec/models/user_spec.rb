@@ -19,7 +19,6 @@ describe User do
 
   # Associations
   should_have_many :projects
-  should_have_many :meetings
 
   # Validations
   should_validate_presence_of :name, :email
