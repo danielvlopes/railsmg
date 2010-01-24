@@ -1,15 +1,16 @@
 class Meeting < ActiveRecord::Base
   URL_REGEXP = /^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$/ix
 
+  # associations
   belongs_to :user
 
-  # Upload
+  # plugins
   has_attached_file :slide_preview, :styles => { :medium => "267x345>", :thumb => "116x150>" }
 
-  # Scopes
+  # scopes
   default_scope :order => 'start_on DESC'
 
-  # Validations
+  # validations
   validates_presence_of :name, :description
 
   with_options :allow_blank => true do |m|

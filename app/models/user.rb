@@ -1,7 +1,7 @@
 require 'open-uri'
 
 class User < ActiveRecord::Base
-  # Authlogic
+  # plugins
   acts_as_authentic do |c|
     c.validate_email_field = false
     c.validate_login_field = false
@@ -9,20 +9,20 @@ class User < ActiveRecord::Base
     c.perishable_token_valid_for = 48.hours
   end
 
-  # Associations
+  # associations
   has_many :projects
   has_many :meetings
 
-  # Scopes
+  # scopes
   default_scope :order => 'users.name'
 
   named_scope :with_projects, :include => :projects, :order => 'users.name, projects.name'
   named_scope :active, :conditions => { :active => true }
   
-  # Attributes
-  attr_protected :active
+  # attributes
+  attr_protected :active, :admin
 
-  # Validations
+  # validations
   validates_presence_of :name, :email, :city
   validates_length_of :password, :minimum => 6, :if => :require_password?
   validates_confirmation_of :password, :if => :require_password?
@@ -35,21 +35,22 @@ class User < ActiveRecord::Base
   end
   
   after_save :fetch_projects!
-  # Fetch user projects using YAML API from Github
+
+  # Fetch user projects from Github
   def fetch_projects!
-    self.projects.destroy_all # Destroy current user projects
+    self.projects.destroy_all
 
-    unless github.blank?
-      result = YAML.load open("http://github.com/api/v2/yaml/repos/show/#{github}/")
+    returning true do
+      if self.github?
+        result = YAML.load open("http://github.com/api/v2/yaml/repos/show/#{github}/")
 
-      result['repositories'].each do |repository|
-        self.projects.create! :name => repository[:name], :description => repository[:description]
+        result['repositories'].each do |repository|
+          self.projects.create! :name => repository[:name], :description => repository[:description]
+        end
       end
-
-      true
     end
-  rescue OpenURI::HTTPError
-    false # user not found, ignore
+  rescue OpenURI::HTTPError # user not found, ignore
+    false
   end
 
   after_create :deliver_signup_confirmation
@@ -75,9 +76,8 @@ class User < ActiveRecord::Base
   end
   
   def self.active! perishable_token
-    find_using_perishable_token!(perishable_token).tap do |user|
+    returning find_using_perishable_token!(perishable_token) do |user|
       user.update_attribute(:active, true) if user
     end
   end
-  
 end

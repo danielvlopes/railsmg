@@ -1,11 +1,11 @@
 class Project < ActiveRecord::Base
-  # Associations
+  # associations
   belongs_to :user, :counter_cache => true
 
-  # Scopes
+  # scopes
   default_scope :order => 'projects.name'
 
-  # Validations
+  # validations
   validates_presence_of :user, :name
 
   with_options :allow_blank => true do |u|
@@ -21,4 +21,3 @@ class Project < ActiveRecord::Base
     "http://github.com/#{user.github}/#{name}"
   end
 end
-
