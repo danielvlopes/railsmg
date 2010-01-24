@@ -6,6 +6,7 @@ db/test.sqlite3
 doc
 log/*
 public/assets
+public/system/**
 .project
 .sass-cache/**
 .settings
