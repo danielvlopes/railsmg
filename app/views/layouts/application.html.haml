@@ -20,7 +20,8 @@
           #{link_to 'login', login_path} ou #{link_to 'cadastro', register_path}
 
       %header#hd
-        %h1 rails<span>mg</span>
+        %h1 
+          = link_to 'rails<span>mg</span>', root_path
 
         %nav#nav
           - tabs :class=>"menu" do |tab|

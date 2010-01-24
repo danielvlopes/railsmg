@@ -44,8 +44,10 @@ h2 {
     margin: -11px 0 0 -30px;
     padding-left: 100px;
     position: absolute; }
-  #hd span {
-    color: #AF1F24; }
+    #hd h1 a {
+      color: #51717F; }
+      #hd h1 a span {
+        color: #AF1F24; }
 
 #nav {
   float: right; }
