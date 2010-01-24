@@ -43,16 +43,22 @@ form .inline-errors {
   color: #C00;
   margin-top: .5em;
   padding-left: 25%; }
-form .radio ol {
-  position: relative;
-  top: -1.2em;
-  padding-left: 25%; }
-form .radio li {
+form .date legend label, form .radio legend label {
+  position: absolute; }
+form .date ol, form .radio ol {
+  margin-left: 25%; }
+form .date li, form .radio li {
   display: inline;
   margin-right: 1em; }
-form .radio label {
+form .date label, form .radio label {
   float: none;
   width: auto; }
+form .date li {
+  margin-right: 0; }
+  form .date li label {
+    display: none; }
+form .date select {
+  min-width: 0; }
 form .buttons, form .boolean {
   padding-left: 25%; }
   form .buttons li, form .boolean li {
