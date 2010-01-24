@@ -3,9 +3,11 @@ class ApplicationController < ActionController::Base
   filter_parameter_logging :password, :password_confirmation
 
   helper_method :current_user, :signed_in?
+  
   rescue_from ActiveRecord::RecordNotFound, :with => :not_found
-
-  protected
+  rescue_from CanCan::AccessDenied, :with => :access_denied
+  
+protected
 
   def current_user_session
     @current_user_session ||= UserSession.find
@@ -19,18 +21,13 @@ class ApplicationController < ActionController::Base
     current_user ? true : false
   end
   
-  private
+private
   
   def access_denied
-    if signed_in?
-      render 'static/access_denied', :status => 401
-    else
-      redirect_to login_path
-    end
+    render 'static/access_denied', :status => 401
   end
   
   def not_found
     render 'static/not_found', :status => 404
   end
 end
-
