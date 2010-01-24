@@ -4,8 +4,8 @@ class MeetingsController < ApplicationController
   current_tab :meetings
   
   def index
-    @meetings = Meeting.all
-    @last_meeting = @meetings.first
+    @next_meeting  = Meeting.first
+    @last_meetings = Meeting.all(:conditions=>["id <> ?", @next_meeting.id])
   end
 end
 

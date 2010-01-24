@@ -241,7 +241,7 @@ h2 {
   margin-bottom: .5em;
   padding-bottom: .5em; }
 
-#content.meetings .last_meeting, #content.meetings .meeting {
+#content.meetings .next_meeting, #content.meetings .meeting {
   background: #F6F6F6;
   border-top: 2px solid #FFF;
   border-bottom: 2px solid #FFF;
@@ -255,10 +255,10 @@ h2 {
   height: 287px;
   margin-bottom: 1em;
   padding: 0 10px; }
-  #content.meetings .last_meeting .image, #content.meetings .meeting .image {
+  #content.meetings .next_meeting .image, #content.meetings .meeting .image {
     float: left;
     margin: .5em 2em .5em 0; }
-    #content.meetings .last_meeting .image img, #content.meetings .meeting .image img {
+    #content.meetings .next_meeting .image img, #content.meetings .meeting .image img {
       border: 4px solid #C3D1DA;
       behavior: url(/stylesheets/border-radius.htc);
       border-radius: 4px;
@@ -266,14 +266,14 @@ h2 {
       -webkit-border-radius: 4px;
       height: 267px;
       width: 345px; }
-  #content.meetings .last_meeting h2, #content.meetings .last_meeting h3, #content.meetings .meeting h2, #content.meetings .meeting h3 {
+  #content.meetings .next_meeting h2, #content.meetings .next_meeting h3, #content.meetings .meeting h2, #content.meetings .meeting h3 {
     padding-bottom: .5em;
     margin-bottom: .5em;
     margin-left: 378px;
     border-bottom: 1px solid #C0D4DD;
     text-transform: none;
     color: #51717F; }
-  #content.meetings .last_meeting h3, #content.meetings .meeting h3 {
+  #content.meetings .next_meeting h3, #content.meetings .meeting h3 {
     margin-top: 3em; }
 #content.meetings .box ul {
   margin: 0; }
