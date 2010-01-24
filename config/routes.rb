@@ -4,7 +4,8 @@ ActionController::Routing::Routes.draw do |map|
 
   # Content
   map.resources :users, :except => :destroy
-  map.resources :projects, :meetings, :only => :index
+  map.resources :projects, :only => :index
+  map.resources :meetings
 
   # Login
   map.login 'login', :controller => 'user_sessions', :action => 'new'

@@ -1,11 +1,8 @@
 class Meeting < ActiveRecord::Base
-  # Associations
   belongs_to :user
-  has_many :content, :class_name => 'Meeting::Content', :order => 'meeting_content.name'
-
+  
   # Scopes
-  default_scope :order => 'meetings.starts_at DESC'
-  named_scope :with_content, :include => :content, :order => 'meetings.starts_at DESC, meeting_content.name'
+  default_scope :order => 'start_on DESC'
 
   # Validations
   validates_presence_of :user, :name, :description

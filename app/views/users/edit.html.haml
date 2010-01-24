@@ -5,12 +5,12 @@
     - f.inputs do
       = f.input :name
       = f.input :city
-      = f.input :github
+      = f.input :github, :label => "Seu nome no <strong>github</strong>"
       = f.input :twitter
       = f.input :site
       = f.input :using_ruby_since
       = f.input :about, :input_html => { :size => '40x5' }
-      = f.input :public_email, :as => :radio
+      = f.input :public_email, :label=>"exibir <strong>email publicamente</strong>"
 
     - f.buttons do
       = f.commit_button 'Atualizar'

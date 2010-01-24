@@ -1,6 +1,6 @@
 class MeetingsController < ApplicationController
   def index
-    @meetings = Meeting.with_content
+    @meetings = Meeting.all
     @last_meeting = @meetings.first
   end
 end

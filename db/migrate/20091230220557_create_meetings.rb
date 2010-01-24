@@ -4,6 +4,10 @@ class CreateMeetings < ActiveRecord::Migration
       t.references :user
       t.string :name
       t.text :description
+      t.string :video
+      t.string :code
+      t.string :slides
+      t.date   :start_on
 
       t.timestamps
     end
@@ -15,4 +19,3 @@ class CreateMeetings < ActiveRecord::Migration
     drop_table :meetings
   end
 end
-
