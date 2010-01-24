@@ -1,9 +1,15 @@
 .meeting
   .image
-    = image_tag 'http://i.imagehost.org/0853/Sem_t_tulo.jpg', :alt => 'Slide preview'
+    = image_tag @meeting.slide_preview.url(:medium)
 
   - if @meeting.present?
-    %h2 #{@meeting}
+    %h2 
+      Próximo encontro
+      - if can?(:update, @meeting)
+        = link_to '(editar)', edit_meeting_path(@meeting)
+
+    %p.info
+      data: <strong>#{l(@meeting.start_on)}</strong> por <strong>#{@meeting.user.name}</strong>
 
     %p
       = @meeting.description

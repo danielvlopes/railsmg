@@ -66,7 +66,6 @@ h2 {
 #content {
   padding: 10px 0; }
   #content .box {
-    font-size: 116%;
     background: #B7D2DF;
     behavior: url(/stylesheets/border-radius.htc);
     border-radius: 7px;
@@ -77,6 +76,8 @@ h2 {
       border-bottom: 2px solid #CAE4F0;
       padding-bottom: .5em;
       margin-bottom: .5em; }
+  #content .info {
+    font-style: italic; }
 
 #content.home .box p ~ h2 {
   margin-top: 2em; }
@@ -252,9 +253,9 @@ h2 {
   box-shadow: 1px 1px 2px #6c8896;
   -moz-box-shadow: 1px 1px 2px #6c8896;
   -webkit-box-shadow: 1px 1px 2px #6c8896;
-  height: 287px;
   margin-bottom: 1em;
-  padding: 0 10px; }
+  padding: 0 10px;
+  overflow: auto; }
   #content.meetings .next_meeting .image, #content.meetings .meeting .image {
     float: left;
     margin: .5em 2em .5em 0; }
@@ -275,6 +276,11 @@ h2 {
     color: #51717F; }
   #content.meetings .next_meeting h3, #content.meetings .meeting h3 {
     margin-top: 3em; }
+#content.meetings .box h3 {
+  padding-bottom: .5em;
+  margin-bottom: .5em;
+  border-bottom: 1px solid #C0D4DD;
+  margin-left: 170px; }
 #content.meetings .box ul {
   margin: 0; }
 #content.meetings .box li {
@@ -289,7 +295,6 @@ h2 {
   -moz-box-shadow: 1px 1px 2px #6c8896;
   -webkit-box-shadow: 1px 1px 2px #6c8896;
   display: block;
-  height: 134px;
   list-style: none;
   margin-bottom: 1em;
   padding: 0 10px; }

@@ -8,6 +8,9 @@
       - if can?(:update, @next_meeting)
         = link_to '(editar)', edit_meeting_path(@next_meeting)
 
+    %p.info
+      data: <strong>#{l(@next_meeting.start_on)}</strong> por <strong>#{@next_meeting.user.name}</strong>
+
     %p
       = @next_meeting.description
 
@@ -31,6 +34,9 @@
           = meeting
           - if can?(:update, meeting)
             = link_to '(editar)', edit_meeting_path(meeting)
+        
+        %p.info
+          exibido em <strong>#{l(meeting.start_on)}</strong> por <strong>#{meeting.user.name}</strong>
 
         %p
           = truncate(meeting.description, 200)
