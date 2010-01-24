@@ -46,7 +46,6 @@ describe User do
   
   it 'active! should set active as true' do
     User.active!(@user.perishable_token).should be_eql @user
-
     @user.reload
     @user.active.should be_true
   end
