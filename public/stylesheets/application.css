@@ -54,11 +54,13 @@ h2 {
   #nav li {
     display: inline;
     margin-right: 2em; }
+    #nav li.current a {
+      color: #C15559; }
   #nav a {
     color: #50707E;
     font-size: 123.1%;
     text-transform: uppercase; }
-    #nav a.active, #nav a:hover {
+    #nav a:hover {
       color: #C15559; }
 
 #content {

@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   load_and_authorize_resource  
   inherit_resources
+  current_tab :users
   
   def create
     create! do |success, failure|

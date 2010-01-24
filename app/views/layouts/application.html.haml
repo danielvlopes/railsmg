@@ -23,15 +23,11 @@
         %h1 rails<span>mg</span>
 
         %nav#nav
-          %ul
-            %li
-              = link_to_with_active 'Home', root_path
-            %li
-              = link_to_with_active 'Membros', users_path
-            %li
-              = link_to_with_active 'Projetos', projects_path
-            %li
-              = link_to_with_active 'Encontros', meetings_path
+          - tabs :class=>"menu" do |tab|
+            = tab.home 'Home', root_path
+            = tab.users 'Membros', users_path
+            = tab.projects 'Projetos', projects_path
+            = tab.meetings 'Encontros', meetings_path
 
       #content{ :class => "#{controller.controller_name} #{controller.action_name}" }
         = yield
