@@ -1,8 +1,7 @@
 config/database.yml
 coverage
 db/schema.*
-db/production.sqlite3
-db/test.sqlite3
+db/*.sqlite3
 doc
 log/*
 public/assets
