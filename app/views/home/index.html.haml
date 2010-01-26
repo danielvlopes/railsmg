@@ -42,8 +42,9 @@
     %h2 Próxima apresentação
 
     #slide
-      = image_tag @next_meeting.slide_preview.url(:medium)
+      - if @next_meeting.present?
+        = image_tag @next_meeting.slide_preview.url(:medium) 
 
     %p
-      <strong>#{@next_meeting.name}:</strong> por <strong>#{@next_meeting.user.name}</strong>
-
+      - if @next_meeting.present?
+        <strong>#{@next_meeting.name}:</strong> por <strong>#{@next_meeting.user.name}</strong>

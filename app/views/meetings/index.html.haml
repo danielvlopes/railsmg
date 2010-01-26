@@ -1,45 +1,46 @@
-.next_meeting
-  .image
-    = image_tag @next_meeting.slide_preview.url(:medium)
+- if @next_meeting.present?
+  .next_meeting
+    .image
+      = image_tag @next_meeting.slide_preview.url(:medium)
 
-  - if @next_meeting.present?
-    %h2 
-      Próximo encontro
-      - if can?(:update, @next_meeting)
-        = link_to '(editar)', edit_meeting_path(@next_meeting)
+      %h2
+        Próximo encontro
+        - if can?(:update, @next_meeting)
+          = link_to '(editar)', edit_meeting_path(@next_meeting)
 
-    %p.info
-      data: <strong>#{l(@next_meeting.start_on)}</strong> por <strong>#{@next_meeting.user.name}</strong>
+      %p.info
+        data: <strong>#{l(@next_meeting.start_on)}</strong> por <strong>#{@next_meeting.user.name}</strong>
 
-    %p
-      = @next_meeting.description
+      %p
+        = @next_meeting.description
 
-    %h3 Conteúdo
+      %h3 Conteúdo
 
-    %p
-      = link_to "VIDEO, ", @next_meeting.video, :popup => true
-      = link_to "CÓDIGO, ", @next_meeting.code, :popup => true
-      = link_to "SLIDES", @next_meeting.slides, :popup => true
+      %p
+        = link_to "VIDEO, ", @next_meeting.video, :popup => true
+        = link_to "CÓDIGO, ", @next_meeting.code, :popup => true
+        = link_to "SLIDES", @next_meeting.slides, :popup => true
 
 .box.last_mettings
   %h2 Apresentações anteriores
 
-  %ul
-    - @last_meetings.each do |meeting|
-      %li
-        .image
-          = image_tag meeting.slide_preview.url(:thumb)
+  - if @last_meetings.present?
+    %ul
+      - @last_meetings.each do |meeting|
+        %li
+          .image
+            = image_tag meeting.slide_preview.url(:thumb)
 
-        %h3
-          = meeting
-          - if can?(:update, meeting)
-            = link_to '(editar)', edit_meeting_path(meeting)
-        
-        %p.info
-          exibido em <strong>#{l(meeting.start_on)}</strong> por <strong>#{meeting.user.name}</strong>
+          %h3
+            = meeting
+            - if can?(:update, meeting)
+              = link_to '(editar)', edit_meeting_path(meeting)
 
-        %p
-          = truncate(meeting.description, 200)
+          %p.info
+            exibido em <strong>#{l(meeting.start_on)}</strong> por <strong>#{meeting.user.name}</strong>
 
-        %p
-          = link_to "VEJA MAIS", meeting
+          %p
+            = truncate(meeting.description, 200)
+
+          %p
+            = link_to "VEJA MAIS", meeting
