@@ -1,3 +1,4 @@
+require 'smtp_tls'
 # Settings specified here will take precedence over those in config/environment.rb
 
 # The production environment is meant for finished, "live" apps.
@@ -26,3 +27,6 @@ config.action_view.cache_template_loading            = true
 
 # Enable threaded mode
 # config.threadsafe!
+
+config.action_mailer.raise_delivery_errors = true
+config.action_mailer.delivery_method = :smtp

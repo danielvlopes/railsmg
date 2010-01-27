@@ -1,4 +1,5 @@
 config/database.yml
+config/initializers/smtp_settings.rb
 coverage
 db/schema.*
 db/*.sqlite3
