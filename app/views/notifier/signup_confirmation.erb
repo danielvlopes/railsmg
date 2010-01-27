@@ -2,13 +2,7 @@ Olá <%= @user.name %>,
 
 Estamos enviando esse e-mail para confirmar o seu cadastro em nosso site.
 
-Para confirmar seu cadastro, basta acessar esse link: <%= active_user_url(@user.perishable_token, :host => 'localhost:3003') %>
-
+Para confirmar seu cadastro, basta acessar esse link: 
+<%= activate_url(@user.perishable_token, :host => APP_CONFIG[:domain]) %>
 
 Caso esse não seja você, simplesmente ignore este e-mail.
-
---
-Atenciosamente,
-
-Equipe RailsMG
-http://www.railsmg.com.br/

@@ -1,0 +1,1 @@
+APP_CONFIG = YAML.load_file(File.join(RAILS_ROOT, 'config', 'config.yml'))[RAILS_ENV].symbolize_keys!

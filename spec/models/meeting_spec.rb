@@ -14,6 +14,8 @@ describe Meeting do
 
   # scopes
   should_have_default_scope :order => 'start_on DESC'
+  should_have_scope :future, :with => Date.today, :conditions=>["start_on > ?",Date.today]
+  should_have_scope :past, :with => Date.today, :conditions=>["start_on < ?",Date.today]  
 
   # validations
   should_validate_presence_of :name, :description

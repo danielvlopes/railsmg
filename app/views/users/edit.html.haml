@@ -11,6 +11,8 @@
       = f.input :using_ruby_since
       = f.input :about, :input_html => { :size => '40x5' }
       = f.input :public_email, :label=>"exibir <strong>email publicamente</strong>"
+      - if current_user.admin? && @user != current_user
+        = f.input :admin
 
     - f.buttons do
       = f.commit_button 'Atualizar'

@@ -3,7 +3,7 @@ class Ability
 
   def initialize(current_user)
     can :read, :all
-    can :create, User
+    can [:create,:activate], User
 
     if current_user.present? && current_user.admin?
       can :manage, :all

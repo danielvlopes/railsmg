@@ -12,6 +12,8 @@ class Meeting < ActiveRecord::Base
 
   # scopes
   default_scope :order => 'start_on DESC'
+  named_scope :next, lambda {|date| {:conditions=>["start_on > ?",date], :limit=>1} }
+  named_scope :past, lambda {|date| {:conditions=>["start_on < ?",date]} }
 
   # validations
   validates_presence_of :name, :description

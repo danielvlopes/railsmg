@@ -1,0 +1,17 @@
+# APP Global settings
+common: &common
+  name: RailsMG
+  support_email: contato@railsmg.org
+  noreply_email: nao-responda@railsmg.com
+
+development:
+  <<: *common
+  domain: localhost:3000
+
+test:
+  <<: *common
+  domain: localhost:3000
+
+production:
+  <<: *common
+  domain: railsmg.org

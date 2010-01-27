@@ -10,9 +10,9 @@ ActionController::Routing::Routes.draw do |map|
   # Login
   map.login 'login', :controller => 'user_sessions', :action => 'new'
   map.logout 'logout', :controller => 'user_sessions', :action => 'destroy'
-
+  map.activate 'activate/:perishable_token', :controller => 'users', :action => 'activate'
+  
   map.register 'register', :controller => 'users', :action => 'new'
-  map.active_user 'active_user/:perishable_token', :controller => 'active_users', :action => 'active'
   
   map.resource :user_session, :as => 'session'
 
