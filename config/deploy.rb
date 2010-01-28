@@ -22,7 +22,11 @@ role :web, domain_name
 role :db,  domain_name, :primary => true
 
 #TASKS
-after 'deploy:symlink', 'assets:jammit'
+after 'deploy:symlink' do
+  assets.jammit
+  deploy.update_crontab
+end
+
 after 'deploy:update_code', 'db:upload_database_yaml'
 
 namespace :deploy do
@@ -35,7 +39,12 @@ namespace :deploy do
   [:start, :stop].each do |t|
     desc "#{t} task is a no-op with mod_rails"
     task t, :roles => :app do ; end
-  end 
+  end
+  
+  desc "Update the crontab file"
+  task :update_crontab, :roles => :db do
+    run "cd #{release_path} && whenever --update-crontab #{application}"
+  end  
 end
 
 namespace :log do

@@ -17,14 +17,13 @@ Rails::Initializer.run do |config|
   # Specify gems that this application depends on and have them installed with rake gems:install
   config.gem 'erubis', :version => '2.6.5'
   config.gem 'jammit', :version => '0.3.2'  
+  config.gem 'whenever', :version => '0.4.1'
   
   config.gem 'authlogic', :version => '2.1.3'
   config.gem 'cancan', :version => '1.0.2'
-
   config.gem 'haml', :version => '2.2.15'
   config.gem 'formtastic', :version => '0.9.7'
   config.gem 'paperclip', :version => '2.3.1.1'
-
   config.gem 'inherited_resources', :version => '0.9.4'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
