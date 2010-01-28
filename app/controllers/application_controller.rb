@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
 
   rescue_from ActiveRecord::RecordNotFound, :with => :not_found
   rescue_from CanCan::AccessDenied, :with => :access_denied
+
   # FIXME - remove it for final release
   before_filter :beta
 protected
