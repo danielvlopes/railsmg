@@ -8,7 +8,7 @@
     .profile
       .info
         %strong= @user.name
-        (#{@user.city} - MG)
+        (#{@user.city})
         - if can?(:update, @user)
           = link_to '(editar perfil)', edit_user_path(@user)
   
