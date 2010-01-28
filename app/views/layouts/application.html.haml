@@ -33,19 +33,25 @@
       #content{ :class => "#{controller.controller_name} #{controller.action_name}" }
         = yield
 
-      %footer#ft
-        %h2 apoio
+      %footer
+        #ft
+          %h2 apoio
 
-        %ul
-          %li.first
-            = link_to image_tag('sponsors/basecamp.jpg', :alt => 'Basecamp'), 'http://basecamphq.com/', :popup => true
-          %li
-            = link_to image_tag('sponsors/egenial.jpg', :alt => 'eGenial'), 'http://egenial.com.br/', :popup => true
-          %li
-            = link_to image_tag('sponsors/github.jpg', :alt => 'Github'), 'http://github.com/', :popup => true
+          %ul
+            %li.first
+              = link_to image_tag('sponsors/basecamp.jpg', :alt => 'Basecamp'), 'http://basecamphq.com/', :popup => true
+            %li
+              = link_to image_tag('sponsors/egenial.jpg', :alt => 'eGenial'), 'http://egenial.com.br/', :popup => true
+            %li
+              = link_to image_tag('sponsors/github.jpg', :alt => 'Github'), 'http://github.com/', :popup => true
 
-          %li
-            = link_to image_tag('sponsors/webbynode.jpg', :alt => 'Webbynode'), 'http://webbynode.com/', :popup => true
+            %li
+              = link_to image_tag('sponsors/webbynode.jpg', :alt => 'Webbynode'), 'http://webbynode.com/', :popup => true
 
-          %li
-            != mail_to 'contato@railsmg.org', image_tag('sponsors/default.jpg', :alt => 'Anuncie aqui'), :encode => :javascript
+            %li
+              != mail_to 'contato@railsmg.org', image_tag('sponsors/default.jpg', :alt => 'Anuncie aqui'), :encode => :javascript
+
+        %p#credit
+          <strong>Website por:</strong> #{link_to "Gabriel Sobrinho", "http://twitter.com/sobrinho"} 
+          (desenvolvimento), #{link_to "Daniel Lopes", "http://areacriacoes.com.br/"} (design e desenvolvimento).
+              
