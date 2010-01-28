@@ -4,12 +4,17 @@
       %h2 Encontros
 
       %p
-        Nos encontramos na primeira terça-feira de cada mês no segundo andar do
-        restaurante Takê (#{link_to_take}).
+        Nos encontramos mensalmente no segundo andar do restaurante Takê (#{link_to_take}).
+        
+      %p
+        Todos os encontros são abertos ao público e não é necessário inscrição, basta aparecer.
 
       %p
-        <strong>Próximo encontro:</strong> Terça-feira 22/01/09 as
-        <strong>19:00</strong>
+        - if @next_meeting.present?
+          <strong>Próximo encontro:</strong> Terça-feira 22/01/09 as <strong>19:00</strong>
+        - else
+          Ainda não agendamos a data para o próximo encontro, então fique "de olho" aqui no site
+          ou em nosso twitter para não perder.
 
       %h2 Google Group
 
@@ -39,12 +44,19 @@
         Twitter para ser lembrado dos encontros e outras atualizações.
 
   .yui-u.sidebar
-    %h2 Próxima apresentação
+    - if @next_meeting.present?  
+      %h2 Próxima apresentação
 
-    #slide
-      - if @next_meeting.present?
+      #slide
         = image_tag @next_meeting.slide_preview.url(:medium) 
 
-    %p
-      - if @next_meeting.present?
+      %p 
         <strong>#{@next_meeting.name}:</strong> por <strong>#{@next_meeting.user.name}</strong>
+    - else
+      %h2 Nenhuma apresentação agendada
+
+      #slide
+
+      %p 
+        Ainda não existe uma data marcada para uma próxima apresentação
+    

@@ -4,8 +4,8 @@ class MeetingsController < ApplicationController
   current_tab :meetings
   
   def index
-    @next_meeting = Meeting.next
-    @last_meetings = Meeting.past
+    @next_meeting = Meeting.next(Date.today).first
+    @last_meetings = Meeting.past(Date.today)
   end
 end
 

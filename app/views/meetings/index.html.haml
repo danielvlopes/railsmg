@@ -1,8 +1,10 @@
 - if @next_meeting.present?
   .next_meeting
-    .image
-      = image_tag @next_meeting.slide_preview.url(:medium)
-
+    .column
+      .image
+        = image_tag @next_meeting.slide_preview.url(:medium)
+    
+    .column
       %h2
         Próximo encontro
         - if can?(:update, @next_meeting)
