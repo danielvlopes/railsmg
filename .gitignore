@@ -9,5 +9,5 @@ public/system/**
 .project
 .sass-cache/**
 .settings
-tmp/**/*
+tmp/
 .DS_Store
