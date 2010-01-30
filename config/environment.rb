@@ -17,8 +17,6 @@ Rails::Initializer.run do |config|
   # Specify gems that this application depends on and have them installed with rake gems:install
   config.gem 'erubis', :version => '2.6.5'
   config.gem 'jammit', :version => '0.3.2'
-  config.gem 'whenever', :version => '0.4.1'
-  config.gem 'hoptoad_notifier', :version => '2.1.3'
   config.gem 'authlogic', :version => '2.1.3'
   config.gem 'cancan', :version => '1.0.2'
   config.gem 'haml', :version => '2.2.15'
