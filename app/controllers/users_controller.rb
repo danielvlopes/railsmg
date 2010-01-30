@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     redirect_to current_user
   end
 
-  protected
+protected
 
   def collection
     @users ||= User.active.all
