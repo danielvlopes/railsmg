@@ -84,7 +84,7 @@ namespace :db do
     upload File.join(File.dirname(__FILE__), "database.yml"), "#{shared_path}/database.yml"
     run "ln -s #{shared_path}/database.yml #{release_path}/config/database.yml"
   end
- 
+
 end
 
 Dir[File.join(File.dirname(__FILE__), '..', 'vendor', 'gems', 'hoptoad_notifier-*')].each do |vendored_notifier|
