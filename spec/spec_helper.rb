@@ -6,9 +6,7 @@ require 'spec/autorun'
 require 'spec/rails'
 require 'remarkable_rails'
 require 'blueprints'
-
-# Uncomment the next line to use webrat's matchers
-#require 'webrat/integrations/rspec-rails'
+require 'webrat/integrations/rspec-rails'
 
 # Requires supporting files with custom matchers and macros, etc,
 # in ./support/ and its subdirectories.

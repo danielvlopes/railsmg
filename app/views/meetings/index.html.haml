@@ -19,9 +19,7 @@
       %h3 Conteúdo
 
       %p
-        = link_to "VIDEO, ", @next_meeting.video, :popup => true
-        = link_to "CÓDIGO, ", @next_meeting.code, :popup => true
-        = link_to "SLIDES", @next_meeting.slides, :popup => true
+        = meeting_attachments(@next_meeting)
 
 .box.last_mettings
   %h2 Apresentações anteriores
