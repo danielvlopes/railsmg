@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :signed_in?
 
   rescue_from ActiveRecord::RecordNotFound, :with => :not_found
-  # rescue_from CanCan::AccessDenied, :with => :access_denied
+  rescue_from CanCan::AccessDenied, :with => :access_denied
 
 protected
 
