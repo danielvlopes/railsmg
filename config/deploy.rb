@@ -9,7 +9,7 @@ set :branch, "master"
 set :deploy_via, :remote_cache
 
 # SSH SETTINGS
-set :user , "USERNAME"
+set :user , "git"
 set :deploy_to, "~/#{application}"
 set :shared_directory, "#{deploy_to}/shared"
 set :use_sudo, false
