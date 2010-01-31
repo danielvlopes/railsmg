@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  include HoptoadNotifier::Catcher  
+  
   protect_from_forgery
   filter_parameter_logging :password, :password_confirmation
 
