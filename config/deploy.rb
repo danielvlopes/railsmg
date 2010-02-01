@@ -28,7 +28,8 @@ after 'deploy:symlink' do
 end
 
 after 'deploy:update_code' do
-  db.upload_database_yaml
+  config.upload_database_yaml
+  config.upload_smtp
   assets.symlink
 end
 
@@ -77,7 +78,7 @@ namespace :assets do
   end
 end
 
-namespace :db do
+namespace :config do
 
   desc "upload database.yml"
   task :upload_database_yaml do
@@ -85,4 +86,9 @@ namespace :db do
     run "ln -s #{shared_path}/database.yml #{release_path}/config/database.yml"
   end
 
+  desc "upload smtp settings"
+  task :upload_smtp do
+    upload File.join(File.dirname(__FILE__), "initializers", "smtp_settings.rb"), "#{shared_path}/smtp_settings.rb"
+    run "ln -s #{shared_path}/smtp_settings.rb #{release_path}/config/initializers/smtp_settings.rb"
+  end
 end
