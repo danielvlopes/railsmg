@@ -20,7 +20,7 @@
           #{link_to 'login', login_path} ou #{link_to 'cadastro', register_path}
 
       %header#hd
-        %h1 
+        %h1
           = link_to 'rails<span>mg</span>', root_path
 
         %nav#nav
@@ -52,6 +52,7 @@
               != mail_to 'contato@railsmg.org', image_tag('sponsors/default.jpg', :alt => 'Anuncie aqui'), :encode => :javascript
 
         %p#credit
-          <strong>Website por:</strong> #{link_to "Gabriel Sobrinho", "http://twitter.com/sobrinho"} 
+          <strong>Website por:</strong> #{link_to "Gabriel Sobrinho", "http://twitter.com/sobrinho"}
           (desenvolvimento), #{link_to "Daniel Lopes", "http://areacriacoes.com.br/"} (design e desenvolvimento).
-              
+
+    = google_analytics

@@ -5,4 +5,9 @@ module ApplicationHelper
 
     image_tag "http://www.gravatar.com/avatar/#{email}?size=48&default=#{default}", :alt => 'Gravatar'
   end
+
+  def google_analytics
+    render :partial => 'shared/analytics' if Rails.env == 'production'
+  end
+
 end
