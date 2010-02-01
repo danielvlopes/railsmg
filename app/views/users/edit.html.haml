@@ -1,8 +1,12 @@
-.box
-  %h2 Editar perfil
+- semantic_form_for @user do |f|
+  - f.inputs do
+    .box
+      %h2 Login    
+      = f.input :email
+      = f.input :password
+      = f.input :password_confirmation
 
-  - semantic_form_for @user do |f|
-    - f.inputs do
+      %h2 Informações pessoais
       = f.input :name
       = f.input :city
       = f.input :github, :label => "Seu nome no <strong>github</strong>"
@@ -14,8 +18,8 @@
       - if current_user.admin? && @user != current_user
         = f.input :admin
 
-    - f.buttons do
-      = f.commit_button 'Atualizar'
+      - f.buttons do
+        = f.commit_button 'Atualizar'
 
 :javascript
   document.getElementById('user_name').focus();

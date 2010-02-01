@@ -12,6 +12,10 @@ h2 {
   color: #51717f;
   text-transform: uppercase; }
 
+hr {
+  border: 1px solid #CAE4F0;
+  margin: 1em 0 1em 0; }
+
 .yui-d-custom {
   margin: auto;
   text-align: left;
@@ -73,7 +77,8 @@ h2 {
     border-radius: 7px;
     -moz-border-radius: 7px;
     -webkit-border-radius: 7px;
-    padding: 1px 10px; }
+    padding: 1px 10px;
+    margin: 5px 0 5px 0; }
     #content .box h2 {
       border-bottom: 2px solid #CAE4F0;
       padding-bottom: .5em;
