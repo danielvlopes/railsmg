@@ -11,7 +11,7 @@
 
       %p
         - if @next_meeting.present?
-          <strong>Próximo encontro:</strong> Terça-feira 22/01/09 as <strong>19:00</strong>
+          <strong>Próximo encontro: #{l @next_meeting.start_on} as 19:00</strong>
         - else
           Ainda não agendamos a data para o próximo encontro, então fique "de olho" aqui no site
           ou em nosso twitter para não perder.
@@ -45,7 +45,7 @@
 
   .yui-u.sidebar
     - if @next_meeting.present?  
-      %h2 Próxima apresentação
+      %h2 Próxima apresentação #{l @next_meeting.start_on}
 
       #slide
         = image_tag @next_meeting.slide_preview.url(:medium)
