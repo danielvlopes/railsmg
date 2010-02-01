@@ -14,7 +14,7 @@
         data: <strong>#{l(@meeting.start_on)}</strong> por <strong>#{@meeting.user.name}</strong>
 
       %p
-        = @meeting.description
+        = simple_format(@meeting.description).html_safe!
 
       %h3 Conteúdo
 
