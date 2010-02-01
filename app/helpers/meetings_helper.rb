@@ -6,7 +6,7 @@ module MeetingsHelper
     output << link_to("VÍDEO", meeting.video, :popup => true) if meeting.video.present?
     output << link_to("SLIDES", meeting.slides, :popup => true) if meeting.slides.present?
     
-    (output.present?) ? output.join(",") : "Não disponível"
+    (output.present?) ? output.join(",").html_safe! : "Não disponível"
   end
   
 end
