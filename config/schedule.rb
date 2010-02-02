@@ -1,3 +1,5 @@
+set :output, {:error => File.join(File.dirname(__FILE__), ".." , "log" , "cron_error.log")}
+
 every 1.day, :at => '4:00 am' do
-  rake "rake github:fetch RAILS_ENV=production"
+  rake "github:fetch RAILS_ENV=production"
 end
