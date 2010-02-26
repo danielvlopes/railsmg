@@ -23,7 +23,7 @@ role :db,  domain_name, :primary => true
 
 #TASKS
 after 'deploy:symlink' do
-  assets.jammit
+  # assets.jammit
   deploy.update_crontab
 end
 
