@@ -1,9 +1,10 @@
 .box
-  %h2 Membros
+  %h2 
+    #{@users.count} Membros
 
   %p
     Procurando bons desenvolvedores, designers ou pessoas relacionadas a Ruby/Rails?
-    Conheça nossos membros:
+    Conheça nossos membros: 
 
   %ul
     - @users.each do |user|
