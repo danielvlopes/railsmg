@@ -3,6 +3,8 @@ class UsersController < ApplicationController
   inherit_resources
   current_tab :users
 
+  respond_to :html, :xml, :json
+
   def create
     create! do |success, failure|
       success.html { render 'success' }
