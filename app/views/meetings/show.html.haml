@@ -6,7 +6,7 @@
   .column
     - if @meeting.present?
       %h2 
-        Próximo encontro
+        Encontro
         - if can?(:update, @meeting)
           = link_to '(editar)', edit_meeting_path(@meeting)
 

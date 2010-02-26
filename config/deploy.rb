@@ -71,10 +71,8 @@ namespace :assets do
   end
 
   task :symlink, :roles => :app do
-    run <<-CMD
-      rm -rf  #{current_path}/public/system &&
-      ln -nfs #{shared_path}/system #{release_path}/public/system
-    CMD
+    run "test -d #{current_path}/public/system || rm -rf #{current_path}/public/system"
+    run "ln -nfs #{shared_path}/system #{current_path}/public/system"
   end
 end
 
