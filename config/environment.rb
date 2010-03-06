@@ -21,6 +21,7 @@ Rails::Initializer.run do |config|
   config.gem 'cancan', :version => '1.0.2'
   config.gem 'haml', :version => '2.2.15'
   config.gem 'formtastic', :version => '0.9.7'
+  config.gem 'menu_builder', :version => '0.2.0'
   config.gem 'paperclip', :version => '2.3.1.1'
   config.gem 'inherited_resources', :version => '0.9.4'
 

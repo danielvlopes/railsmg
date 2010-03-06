@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  current_tab :home
+  menu_item :home
   
   def index
     @next_meeting = Meeting.next(Date.today).first

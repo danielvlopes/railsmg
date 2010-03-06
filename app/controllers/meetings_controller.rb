@@ -1,7 +1,7 @@
 class MeetingsController < ApplicationController
   load_and_authorize_resource  
   inherit_resources
-  current_tab :meetings
+  menu_item :meetings
   
   def index
     @next_meeting = Meeting.next(Date.today).first

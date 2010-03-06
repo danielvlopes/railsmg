@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  current_tab :projects
+  menu_item :projects
   
   def index
     @users = User.active.with_projects

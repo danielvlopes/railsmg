@@ -24,11 +24,11 @@
           = link_to 'rails<span>mg</span>', root_path
 
         %nav#nav
-          - tabs :class=>"menu" do |tab|
-            = tab.home 'Home', root_path
-            = tab.users 'Membros', users_path
-            = tab.projects 'Projetos', projects_path
-            = tab.meetings 'Encontros', meetings_path
+          - menu :class=>"menu" do |m|
+            = m.home 'Home', root_path
+            = m.users 'Membros', users_path
+            = m.projects 'Projetos', projects_path
+            = m.meetings 'Encontros', meetings_path
 
       #content{ :class => "#{controller.controller_name} #{controller.action_name}" }
         = yield
