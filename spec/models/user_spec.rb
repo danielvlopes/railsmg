@@ -34,7 +34,7 @@ describe User do
   should_allow_values_for :email, 'john@doe.com', 'john.doe@gmail.ru'
   should_not_allow_values_for :email, 'john@doe', 'john.doe'
   
-  should_allow_values_for :github, 'john', 'jonh_doe'
+  should_allow_values_for :github, 'john', 'jonh_doe', 'jonh0909'
   should_not_allow_values_for :github, 'jonhn doe', 'john.doe'
 
   it 'active should be on protected attributes' do
