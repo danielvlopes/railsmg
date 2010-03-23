@@ -12,3 +12,4 @@ public/system/**
 .settings
 tmp/
 .DS_Store
+*.swp
