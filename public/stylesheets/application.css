@@ -340,7 +340,7 @@ hr {
     text-align: center; }
   #ft li {
     display: inline;
-    margin-left: 25px; }
+    margin: 10px 25px 10px 0; }
     #ft li.first {
       margin-left: 0; }
   #ft a {
