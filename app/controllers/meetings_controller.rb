@@ -4,7 +4,7 @@ class MeetingsController < ApplicationController
   menu_item :meetings
   
   def index
-    @next_meeting = Meeting.next(Date.today).first
+    @next_meetings = Meeting.next(Date.today)
     @last_meetings = Meeting.past(Date.today)
   end
 end

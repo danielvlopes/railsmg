@@ -1,25 +1,27 @@
-- if @next_meeting.present?
-  .next_meeting
-    .column
-      .image
-        = image_tag @next_meeting.slide_preview.url(:medium)
+- if @next_meetings.present?
+
+  - @next_meetings.each do |meeting|
+    .next_meeting
+      .column
+        .image
+          = image_tag meeting.slide_preview.url(:medium)
     
-    .column
-      %h2
-        Próximo encontro
-        - if can?(:update, @next_meeting)
-          = link_to '(editar)', edit_meeting_path(@next_meeting)
+      .column
+        %h2
+          Próximo encontro
+          - if can?(:update, meeting)
+            = link_to '(editar)', edit_meeting_path(meeting)
 
-      %p.info
-        data: <strong>#{l(@next_meeting.start_on)}</strong> por <strong>#{@next_meeting.user.name}</strong>
+        %p.info
+          data: <strong>#{l(meeting.start_on)}</strong> por <strong>#{meeting.user.name}</strong>
 
-      %p
-        = simple_format(@next_meeting.description).html_safe!
+        %p
+          = simple_format(meeting.description).html_safe!
 
-      %h3 Conteúdo
+        %h3 Conteúdo
 
-      %p
-        = meeting_attachments(@next_meeting)
+        %p
+          = meeting_attachments(meeting)
 
 .box.last_mettings
   %h2 Apresentações anteriores
