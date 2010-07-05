@@ -4,18 +4,17 @@
       %h2 Encontros
 
       %p
-        Nosso próximo encontro será no campus da UNA no Barro Preto, #{link_to "veja mais aqui", "http://bit.ly/cursorails"}.
-        / Nos encontramos mensalmente no segundo andar do restaurante Takê (#{link_to_take}).
-        
-      / %p
-      /   Todos os encontros são abertos ao público e não é necessário inscrição, basta aparecer.
+        Nos encontramos mensalmente no segundo andar do restaurante Takê (#{link_to_take}).
 
-      / %p
-      /   - if @next_meeting.present?
-      /     <strong>Próximo encontro: #{l @next_meeting.start_on} as 19:30</strong>
-      /   - else
-      /     Ainda não agendamos a data para o próximo encontro, então fique "de olho" aqui no site
-      /     ou em nosso twitter para não perder.
+      %p
+        Todos os encontros são abertos ao público e não é necessário inscrição, basta aparecer.
+
+      %p
+        - if @next_meeting.present?
+          <strong>Próximo encontro: #{l @next_meeting.start_on} as 19:30</strong>
+        - else
+          Ainda não agendamos a data para o próximo encontro, então fique "de olho" aqui no site
+          ou em nosso twitter para não perder.
 
       %h2 Google Group
 
@@ -45,19 +44,18 @@
         Twitter para ser lembrado dos encontros e outras atualizações.
 
   .yui-u.sidebar
-    - if @next_meeting.present?  
+    - if @next_meeting.present?
       %h2 Próxima apresentação #{l @next_meeting.start_on}
 
       #slide
         = image_tag @next_meeting.slide_preview.url(:medium)
 
-      %p 
+      %p
         <strong>#{@next_meeting.name}:</strong> por <strong>#{@next_meeting.user.name}</strong>
     - else
       %h2 Nenhuma apresentação agendada
 
       #slide
 
-      %p 
+      %p
         Ainda não existe uma data marcada para uma próxima apresentação
-    
