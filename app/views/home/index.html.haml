@@ -4,17 +4,30 @@
       %h2 Encontros
 
       %p
-        Nos encontramos mensalmente no segundo andar do restaurante Takê (#{link_to_take}).
+        No sábado (28/08/2010) teremos uma palestra do Antônio Roberto (Ton) na UNA
+        sobre <strong>Cramp e Websockets</strong>.
 
       %p
-        Todos os encontros são abertos ao público e não é necessário inscrição, basta aparecer.
+        A palestra terá duração aproximada de 50 minutos seguido de um <strong>DOJO</strong> em Ruby para resolução
+        de alguns problemas simples e primeiro contato com a linguagem e também <strong>TDD</strong>.
 
       %p
-        - if @next_meeting.present?
-          <strong>Próximo encontro: #{l @next_meeting.start_on} as 19:30</strong>
-        - else
-          Ainda não agendamos a data para o próximo encontro, então fique "de olho" aqui no site
-          ou em nosso twitter para não perder.
+        %strong
+          Para participar é gratuito mas deve se inscrever neste neste link:
+          #{link_to "bit.ly/railsmg-cramp", "http://bit.ly/railsmg-cramp"}
+
+      / %p
+      /   Nos encontramos mensalmente no segundo andar do restaurante Takê (#{link_to_take}).
+      /
+      / %p
+      /   Todos os encontros são abertos ao público e não é necessário inscrição, basta aparecer.
+      /
+      / %p
+      /   - if @next_meeting.present?
+      /     <strong>Próximo encontro: #{l @next_meeting.start_on} as 19:30</strong>
+      /   - else
+      /     Ainda não agendamos a data para o próximo encontro, então fique "de olho" aqui no site
+      /     ou em nosso twitter para não perder.
 
       %h2 Google Group
 
