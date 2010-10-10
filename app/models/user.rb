@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   # scopes
   default_scope :order => 'users.name'
 
-  named_scope :with_projects, :include => :projects, :order => 'users.name, projects.name'
+  named_scope :with_projects, :joins => :projects, :order => 'users.name, projects.name'
   named_scope :active, :conditions => { :active => true }
   
   # attributes
