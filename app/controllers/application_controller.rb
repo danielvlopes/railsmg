@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   end
 
   def signed_in?
-    current_user ? true : false
+    !!current_user
   end
 
   private
