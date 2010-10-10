@@ -1,7 +1,7 @@
 # Be sure to restart your server when you modify this file
 
 # Specifies gem version of Rails to use when vendor/rails is not present
-RAILS_GEM_VERSION = '2.3.5' unless defined? RAILS_GEM_VERSION
+RAILS_GEM_VERSION = '2.3.8' unless defined? RAILS_GEM_VERSION
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
@@ -15,15 +15,6 @@ Rails::Initializer.run do |config|
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
 
   # Specify gems that this application depends on and have them installed with rake gems:install
-  config.gem 'erubis', :version => '2.6.5'
-  config.gem 'jammit', :version => '0.3.2'
-  config.gem 'authlogic', :version => '2.1.3'
-  config.gem 'cancan', :version => '1.0.2'
-  config.gem 'haml', :version => '2.2.15'
-  config.gem 'formtastic', :version => '0.9.7'
-  config.gem 'menu_builder', :version => '0.2.0'
-  config.gem 'paperclip', :version => '2.3.1.1'
-  config.gem 'inherited_resources', :version => '0.9.4'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
