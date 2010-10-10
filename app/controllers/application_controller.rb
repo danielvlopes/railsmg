@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound, :with => :not_found
   rescue_from CanCan::AccessDenied, :with => :access_denied
 
-protected
+  protected
 
   def current_user_session
     @current_user_session ||= UserSession.find
@@ -21,12 +21,13 @@ protected
     current_user ? true : false
   end
 
-private
+  private
+
   def access_denied
-    render 'static/access_denied', :status => 401
+    render 'shared/access_denied', :status => 401
   end
 
   def not_found
-    render 'static/not_found', :status => 404
+    render 'shared/not_found', :status => 404
   end
 end
