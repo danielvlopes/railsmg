@@ -16,7 +16,7 @@ gem 'menu_builder', '0.2.1'
 gem 'inherited_resources', '1.0.6'
 
 group :production do
-  gem 'whenever', '0.4.1'
+  gem 'whenever', '0.5.3'
 end
 
 group :test do
