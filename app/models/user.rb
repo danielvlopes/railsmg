@@ -2,11 +2,11 @@ require 'open-uri'
 
 class User < ActiveRecord::Base
   # plugins
-  acts_as_authentic do |c|
-    c.validate_email_field = false
-    c.validate_login_field = false
-    c.validate_password_field = false
-    c.perishable_token_valid_for = 48.hours
+  acts_as_authentic do |config|
+    config.validate_email_field = false
+    config.validate_login_field = false
+    config.validate_password_field = false
+    config.perishable_token_valid_for = 48.hours
   end
 
   # associations
