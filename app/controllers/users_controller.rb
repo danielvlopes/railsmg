@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   end
 
   def activate
-    user = User.active! params[:perishable_token]
+    user = resource_class.active!(params[:perishable_token])
     UserSession.create(user)
 
     redirect_to current_user
