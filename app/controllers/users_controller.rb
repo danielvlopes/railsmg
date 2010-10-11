@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   load_and_authorize_resource
   inherit_resources
-  menu_item :users
 
   respond_to :html, :xml, :json
 

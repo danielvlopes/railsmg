@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
 
   rescue_from ActiveRecord::RecordNotFound, :with => :not_found
   rescue_from CanCan::AccessDenied, :with => :access_denied
+  
+  before_filter :set_menu_item
 
   protected
 
@@ -19,6 +21,10 @@ class ApplicationController < ActionController::Base
 
   def signed_in?
     !!current_user
+  end
+  
+  def set_menu_item
+    @menu_item = controller_name
   end
 
   private
