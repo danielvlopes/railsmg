@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   end
 
   # associations
-  has_many :projects
+  has_many :projects, :inverse_of => :user
   has_many :meetings
 
   # scopes
