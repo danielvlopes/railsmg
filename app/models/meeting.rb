@@ -11,7 +11,7 @@ class Meeting < ActiveRecord::Base
     :default_url => "/images/slide_:style.jpg"
 
   # scopes
-  default_scope :order => 'start_on DESC'
+  named_scope :most_recent, :order => "#{quoted_table_name}.start_on DESC"
   named_scope :next, lambda { { :conditions => ["#{quoted_table_name}.start_on >= ?", Date.today] } }
   named_scope :past, lambda { { :conditions => ["#{quoted_table_name}.start_on < ?", Date.today] } }
 
