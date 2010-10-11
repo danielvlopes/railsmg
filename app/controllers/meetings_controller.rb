@@ -1,7 +1,4 @@
-class MeetingsController < ApplicationController
-  load_and_authorize_resource  
-  inherit_resources
-  
+class MeetingsController < BaseController
   def index
     @next_meetings = Meeting.next
     @last_meetings = Meeting.past

@@ -1,18 +1,16 @@
-class UsersController < ApplicationController
-  load_and_authorize_resource
-  inherit_resources
-
-  respond_to :html, :xml, :json
-
+class UsersController < BaseController
   def create
     create! do |success, failure|
-      success.html { render 'success' }
+      success.html do
+        render :create
+      end
+      
+      failure.html do
+        render :new
+      end
     end
   end
-
-  def edit
-  end
-
+  
   def update
     resource.admin = params[:user][:admin] == '1' if current_user.admin?
     update!
@@ -25,10 +23,17 @@ class UsersController < ApplicationController
     redirect_to current_user
   end
 
-protected
+  protected
 
   def collection
     @users ||= User.active.all
   end
+  
+  def authorize_resource!
+    if action_name == 'activate'
+      can? :activate, resource_class
+    else
+      super
+    end
+  end
 end
-
