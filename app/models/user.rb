@@ -53,7 +53,7 @@ class User < ActiveRecord::Base
   after_create :deliver_signup_confirmation
 
   def deliver_signup_confirmation
-    Notifier.deliver_signup_confirmation self
+    Notifier.deliver_signup_confirmation(self)
   end
   
   def to_s
@@ -72,8 +72,8 @@ class User < ActiveRecord::Base
     %{"#{name}" <#{email}>}
   end
   
-  def self.active! perishable_token
-    returning find_using_perishable_token!(perishable_token) do |user|
+  def self.active!(perishable_token)
+    find_using_perishable_token!(perishable_token).tap do |user|
       user.update_attribute(:active, true) if user
     end
   end
