@@ -33,24 +33,26 @@ class User < ActiveRecord::Base
     u.validates_format_of :github, :with => /^[a-z0-9_]+$/
     u.validates_uniqueness_of :email, :github, :case_sensitive => false
   end
-  
-  after_save :fetch_projects!
 
-  # Fetch user projects from Github
-  def fetch_projects!
+  # callbacks
+  after_save :fetch_github_projects!
+  after_create :deliver_signup_confirmation
+
+  def fetch_github_projects!
     projects.destroy_all
 
     if github?
-      result = YAML.load open("http://github.com/api/v2/yaml/repos/show/#{github}/")
+      begin
+        result = YAML.load(open("http://github.com/api/v2/yaml/repos/show/#{github}"))
 
-       result['repositories'].each do |repository|
-        projects.create! :name => repository[:name], :description => repository[:description]
+         result['repositories'].each do |repository|
+          projects.create! :name => repository[:name], :description => repository[:description]
+        end
+      rescue OpenURI::HTTPError
+         # invalid github user, ignore
       end
     end
-  rescue OpenURI::HTTPError # user not found, ignore
   end
-
-  after_create :deliver_signup_confirmation
 
   def deliver_signup_confirmation
     Notifier.deliver_signup_confirmation(self)
