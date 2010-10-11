@@ -29,8 +29,8 @@ class User < ActiveRecord::Base
 
   with_options :allow_blank => true do |u|
     u.validates_length_of :name, :city, :github, :in => 1..255
-    u.validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
-    u.validates_format_of :github, :with => /^[a-z_0-9]+$/
+    u.validates_format_of :email, :with => /^([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})$/i
+    u.validates_format_of :github, :with => /^[a-z0-9_]+$/
     u.validates_uniqueness_of :email, :github, :case_sensitive => false
   end
   
