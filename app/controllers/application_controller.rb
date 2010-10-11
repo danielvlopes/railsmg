@@ -30,7 +30,11 @@ class ApplicationController < ActionController::Base
   private
 
   def access_denied
-    render 'shared/access_denied', :status => 401
+    if signed_in?
+      render 'shared/access_denied', :status => 401
+    else
+      redirect_to login_path
+    end
   end
 
   def not_found
