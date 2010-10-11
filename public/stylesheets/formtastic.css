@@ -2,7 +2,7 @@ form ol {
   margin: 0; }
 form li {
   list-style: none;
-  margin-bottom: .8em; }
+  margin-bottom: 0.8em; }
 form legend {
   color: inherit; }
 form label {
@@ -10,8 +10,8 @@ form label {
   float: left;
   width: 25%; }
 form input[type="text"], form input[type="password"], form select, form textarea {
-  background: #FFF url(../images/form_input.gif) repeat-x;
-  border: 1px solid #9AB3BA;
+  background: white url(../images/form_input.gif) repeat-x;
+  border: 1px solid #9ab3ba;
   padding: 4px;
   width: 40%; }
 form input[type="checkbox"] {
@@ -22,15 +22,15 @@ form input[type="submit"], form input[type="button"] {
   border-radius: 5px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
-  border: 1px solid #9AB3BA;
+  border: 1px solid #9ab3ba;
   cursor: pointer;
   padding: 0 10px;
   font-size: 93%;
   height: 26px; }
   form input[type="submit"]:hover, form input[type="submit"]:focus, form input[type="button"]:hover, form input[type="button"]:focus {
     background-position: bottom left;
-    border-color: #246F9F;
-    color: #FFF; }
+    border-color: #246f9f;
+    color: white; }
 form select {
   width: auto;
   min-width: 20%; }
@@ -38,10 +38,10 @@ form textarea {
   width: auto;
   min-width: 40%; }
 form .error input[type="text"], form .error input[type="password"], form .error select, form .error textarea {
-  border-color: #F08080; }
+  border-color: #f08080; }
 form .inline-errors {
-  color: #C00;
-  margin-top: .5em;
+  color: #cc0000;
+  margin-top: 0.5em;
   padding-left: 25%; }
 form .date legend label, form .radio legend label {
   position: absolute; }
