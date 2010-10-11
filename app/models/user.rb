@@ -14,8 +14,7 @@ class User < ActiveRecord::Base
   has_many :meetings
 
   # scopes
-  default_scope :order => 'users.name'
-
+  named_scope :sorted, :order => "#{quoted_table_name}.name"
   named_scope :with_projects, :include => :projects, :order => "#{quoted_table_name}.name, #{Project.quoted_table_name}.name"
   named_scope :active, :conditions => { :active => true }
   
