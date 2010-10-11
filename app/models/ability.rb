@@ -1,16 +1,19 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(current_user)
+  def initialize(user)
     can :read, :all
-    can [:create,:activate], User
 
-    if current_user.present? && current_user.admin?
-      can :manage, :all
-    else current_user.present?
-      can(:update, User) { |user| current_user == user }
-      can(:update, Meeting) { |meeting| meeting.try(:user) == current_user }
+    if user.nil?
+      can :create, User
+      can :activate, User
+    else
+      if user.admin?
+        can :manage, :all
+      else
+        can :update, User, :id => user.id
+        can :update, Meeting, :user_id => user.id
+      end
     end
   end
-  
 end
