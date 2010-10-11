@@ -4,11 +4,11 @@
     %meta(charset='utf-8')
     %title RailsMG
 
-    != include_stylesheets :common, :application
-    != include_javascripts :common
+    = include_stylesheets :yui, :application
+    = include_javascripts :application
 
     /[if IE 6]
-      != include_stylesheets :ie6
+      = include_stylesheets :ie6
 
   %body
     .yui-d-custom
