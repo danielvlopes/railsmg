@@ -154,10 +154,12 @@ pt-BR:
         public_email: "E-mail visível para todos?"
       meeting:
         name: "Nome"
+        user: "Palestrante"
         description: "Descrição"
         video: "Vídeo"
         code: "Código"
         slides: "Slides"
+        slide_preview: "Slide de destaque"
         start_on: "Inicia em"
 
   formtastic:
