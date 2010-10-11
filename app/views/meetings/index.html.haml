@@ -1,5 +1,4 @@
-- if @next_meetings.present?
-
+- if @next_meetings.any?
   - @next_meetings.each do |meeting|
     .next_meeting
       .column
@@ -9,24 +8,24 @@
       .column
         %h2
           Próximo encontro
-          - if can?(:update, meeting)
-            = link_to '(editar)', edit_meeting_path(meeting)
+          = link_to '(editar)', edit_meeting_path(meeting) if can? :update, meeting
 
         %p.info
-          data: <strong>#{l(meeting.start_on)}</strong> por <strong>#{meeting.user.name}</strong>
+          data: <strong>#{l meeting.start_on}</strong> por <strong>#{meeting.user.name}</strong>
+
+        %div
+          = simple_format meeting.description
+
+        %h3
+          Conteúdo
 
         %p
-          = simple_format(meeting.description).html_safe!
-
-        %h3 Conteúdo
-
-        %p
-          = meeting_attachments(meeting)
+          = meeting_attachments meeting
 
 .box.last_mettings
   %h2 Apresentações anteriores
 
-  - if @last_meetings.present?
+  - if @last_meetings.any?
     %ul
       - @last_meetings.each do |meeting|
         %li
@@ -35,14 +34,13 @@
 
           %h3
             = meeting
-            - if can?(:update, meeting)
-              = link_to '(editar)', edit_meeting_path(meeting)
+            = link_to '(editar)', edit_meeting_path(meeting) if can? :update, meeting
 
           %p.info
-            exibido em <strong>#{l(meeting.start_on)}</strong> por <strong>#{meeting.user.name}</strong>
+            exibido em <strong>#{l meeting.start_on}</strong> por <strong>#{meeting.user.name}</strong>
 
-          %p
-            = truncate(meeting.description, 200)
+          %div
+            = simple_format truncate(meeting.description, :length => 200)
 
           %p
             = link_to "VEJA MAIS", meeting

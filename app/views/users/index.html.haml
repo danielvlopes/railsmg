@@ -11,10 +11,12 @@
       %li
         %span.gravatar
           = link_to gravatar_image_tag(user.email), user_path(user)
+
         %span.name
           = link_to h(user.name), user_path(user)
+
         %span.city
           = user.city
+
         %span.github
           = link_to t('user.projects', :count => user.projects.count), projects_path(:anchor => dom_id(user))
-

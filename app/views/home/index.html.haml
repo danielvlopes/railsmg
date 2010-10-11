@@ -1,7 +1,8 @@
 .yui-g
   .yui-u.first
     .box
-      %h2 Encontros
+      %h2
+        Encontros
 
       / %p
       /   No sábado (28/08/2010) teremos uma palestra do Antônio Roberto (Ton) na UNA
@@ -27,13 +28,16 @@
         Todos os encontros são abertos ao público e não é necessário inscrição, basta aparecer.
       
       %p
-        - if @next_meeting.present?
-          <strong>Próximo encontro: #{l @next_meeting.start_on} as 19:30</strong>
+        - if @next_meeting
+          %strong
+            Próximo encontro: #{l @next_meeting.start_on} as 19:30
+
         - else
           Ainda não agendamos a data para o próximo encontro, então fique "de olho" aqui no site
           ou em nosso twitter para não perder.
 
-      %h2 Google Group
+      %h2
+        Google Group
 
       %p
         Os membros do nosso grupo também participam de uma lista de discussão
@@ -44,33 +48,44 @@
         grupo provalvemente poderá ajudar.
 
       %p
-        #{link_to 'Registre-se', 'http://groups.google.com/group/rails-mg'} e
-        comece a participar.
+        = link_to 'Registre-se', 'http://groups.google.com/group/rails-mg'
+        e comece a participar.
 
-      %h2 Procurando um desenvolvedor?
+      %h2
+        Procurando um desenvolvedor?
 
       %p
         Procurando um freelancer, desenvolvedor ou uma empresa especializada em
         tópicos relacionados a Ruby? Envie um prospecto resumido de suas
         necessidades na #{link_to 'lista de discussão', 'http://groups.google.com/group/rails-mg'}.
 
-      %h2 Twitter
+      %h2
+        Twitter
 
       %p
-        Você pode seguir #{link_to '@railsmg', 'http://twitter.com/railsmg'} no
+        Você pode seguir o #{link_to '@railsmg', 'http://twitter.com/railsmg'} no
         Twitter para ser lembrado dos encontros e outras atualizações.
 
   .yui-u.sidebar
-    - if @next_meeting.present?
-      %h2 Próxima apresentação #{l @next_meeting.start_on}
+    - if @next_meeting
+      %h2
+        Próxima apresentação #{l @next_meeting.start_on}
 
       #slide
         = image_tag @next_meeting.slide_preview.url(:medium)
 
       %p
-        <strong>#{@next_meeting.name}:</strong> por <strong>#{@next_meeting.user.name}</strong>
+        %strong
+          = @next_meeting.name
+        
+        por
+        
+        %strong
+          = @next_meeting.user.name
+
     - else
-      %h2 Nenhuma apresentação agendada
+      %h2
+        Nenhuma apresentação agendada
 
       #slide
 

@@ -4,19 +4,18 @@
       = image_tag @meeting.slide_preview.url(:medium)
 
   .column
-    - if @meeting.present?
+    - if @meeting
       %h2 
         Encontro
-        - if can?(:update, @meeting)
-          = link_to '(editar)', edit_meeting_path(@meeting)
+        = link_to '(editar)', edit_meeting_path(@meeting) if can? :update, @meeting
 
       %p.info
-        data: <strong>#{l(@meeting.start_on)}</strong> por <strong>#{@meeting.user.name}</strong>
+        data: <strong>#{l @meeting.start_on}</strong> por <strong>#{@meeting.user.name}</strong>
 
-      %p
-        = simple_format(@meeting.description).html_safe!
+      %div
+        = simple_format @meeting.description
 
       %h3 Conteúdo
 
       %p
-        = meeting_attachments(@meeting)
+        = meeting_attachments @meeting

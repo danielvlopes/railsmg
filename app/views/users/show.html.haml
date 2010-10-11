@@ -1,5 +1,6 @@
 .box
-  %h2= @user
+  %h2
+    = @user
 
   .user
     .gravatar
@@ -7,9 +8,12 @@
     
     .profile
       .info
-        %strong= @user.name
+        %strong
+          = @user.name
+
         (#{@user.city})
-        - if can?(:update, @user)
+
+        - if can? :update, @user
           = link_to '(editar perfil)', edit_user_path(@user)
   
         - if @user.using_ruby_since?
@@ -18,35 +22,46 @@
       
       .about
         - if @user.about?
-          != simple_format auto_link(h(@user.about), :link => :urls, :target => "_blank")
+          = simple_format auto_link(@user.about, :link => :urls, :popup => true)
+
         - else
-          %p.empty Sem descrição pessoal
+          %p.empty
+            Sem descrição pessoal
     
     %ul.links
       - if @user.site?
-        %li= link_to image_tag('website.jpg', :alt => 'Website'), @user.site, :rel => 'nofollow'
+        %li
+          = link_to image_tag('website.jpg', :alt => 'Website'), @user.site, :rel => 'nofollow'
         
       - if @user.public_email?
-        %li!= mail_to @user.email, image_tag('email.jpg', :alt => 'E-mail'), :encode => :javascript
+        %li
+          != mail_to @user.email, image_tag('email.jpg', :alt => 'E-mail'), :encode => :javascript
         
       - if @user.twitter?
-        %li= link_to image_tag('twitter.jpg', :alt => 'Twitter'), @user.twitter_url
+        %li
+          = link_to image_tag('twitter.jpg', :alt => 'Twitter'), @user.twitter_url
 
   - if @user.github?
-    %h3 Projetos OpenSource
+    %h3
+      Projetos OpenSource
 
     %p
       É autor ou participa de
-      %strong= link_to "#{@user.projects.count} projetos", @user.github_url
+
+      %strong
+        = link_to "#{@user.projects.count} projetos", @user.github_url
+
       opensource no
-      %strong= link_to "Github", 'http://github.com/'
+
+      %strong
+        = link_to "GitHub", 'http://github.com/'
   
-    - unless @user.projects.empty?
+    - if @user.projects.any?
       %ul.projects
-        - @user.projects.each do |project|
+        - @user.projects.sorted.each do |project|
           %li
             %h4
-              = link_to h(project), project.github_url
+              = link_to project, project.github_url
  
             %p
               = project.description

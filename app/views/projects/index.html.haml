@@ -10,8 +10,10 @@
       %li{ :id => dom_id(user) }
         %span.gravatar
           = link_to gravatar_image_tag(user.email), user_path(user)
+
         %h3.name
-          = link_to h(user), user_path(user)
+          = link_to user, user_path(user)
+
         %span.github
           = t 'user.projects', :count => user.projects.count
 
@@ -19,8 +21,7 @@
           - user.projects.each do |project|
             %li
               %h4
-                = link_to h(project), project.github_url
+                = link_to project, project.github_url
 
               %p
                 = project.description
-
