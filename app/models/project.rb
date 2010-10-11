@@ -3,7 +3,7 @@ class Project < ActiveRecord::Base
   belongs_to :user, :counter_cache => true
 
   # scopes
-  default_scope :order => 'projects.name'
+  named_scope :sorted, :order => "#{quoted_table_name}.name"
 
   # validations
   validates_presence_of :user, :name
