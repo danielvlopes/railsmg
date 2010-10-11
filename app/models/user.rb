@@ -34,8 +34,8 @@ class User < ActiveRecord::Base
   end
 
   # callbacks
-  after_save :fetch_github_projects!
   after_create :deliver_signup_confirmation
+  after_update :fetch_github_projects!
 
   def fetch_github_projects!
     projects.destroy_all
