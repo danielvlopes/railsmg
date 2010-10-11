@@ -5,7 +5,7 @@ namespace :github do
     User.all(:conditions => "github IS NOT NULL").in_groups_of(100, false) do |group|
       group.each do |user|
         puts "Fetching projects for #{user}"
-        user.fetch_projects!
+        user.fetch_github_projects!
       end
 
       sleep 65
