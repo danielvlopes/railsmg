@@ -14,8 +14,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
-    @user.admin = true if current_user.admin? && params[:user][:admin].present?
+    resource.admin = params[:user][:admin] == '1' if current_user.admin?
     update!
   end
 
