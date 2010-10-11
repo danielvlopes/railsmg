@@ -18,7 +18,7 @@ describe Meeting do
   should_have_scope :past, :with => Date.today, :conditions=>["start_on < ?",Date.today]  
 
   # validations
-  should_validate_presence_of :name, :description
+  should_validate_presence_of :name, :description, :user, :start_on
 
   with_options :allow_blank => true do |m|
     m.should_validate_length_of :name, :in => 1..255

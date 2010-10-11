@@ -16,7 +16,7 @@ class Meeting < ActiveRecord::Base
   named_scope :past, lambda { { :conditions => ["#{quoted_table_name}.start_on < ?", Date.today] } }
 
   # validations
-  validates_presence_of :name, :description
+  validates_presence_of :name, :description, :user, :start_on
   validates_attachment_content_type :slide_preview, :content_type => IMAGE_TYPES
   validates_attachment_size :slide_preview, :less_than => 5.megabytes
 
