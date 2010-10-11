@@ -3,8 +3,8 @@ class MeetingsController < ApplicationController
   inherit_resources
   
   def index
-    @next_meetings = Meeting.next(Date.today)
-    @last_meetings = Meeting.past(Date.today)
+    @next_meetings = Meeting.next
+    @last_meetings = Meeting.past
   end
 end
 

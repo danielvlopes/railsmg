@@ -12,8 +12,8 @@ class Meeting < ActiveRecord::Base
 
   # scopes
   default_scope :order => 'start_on DESC'
-  named_scope :next, lambda {|date| {:conditions=>["start_on >= ?",date]} }
-  named_scope :past, lambda {|date| {:conditions=>["start_on < ?",date]} }
+  named_scope :next, lambda { { :conditions => ["#{quoted_table_name}.start_on >= ?", Date.today] } }
+  named_scope :past, lambda { { :conditions => ["#{quoted_table_name}.start_on < ?", Date.today] } }
 
   # validations
   validates_presence_of :name, :description
