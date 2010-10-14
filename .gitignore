@@ -13,3 +13,4 @@ public/system/**
 tmp/
 .DS_Store
 *.swp
+.rvmrc
