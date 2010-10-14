@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  load_and_authorize_resource
+  load_and_authorize_resource :except => [:find]
   inherit_resources
   menu_item :users
 
@@ -12,6 +12,11 @@ class UsersController < ApplicationController
   end
 
   def edit
+  end
+
+  def find
+    @user = User.find_by_username(params[:username])
+    @user.present? ? render(:show) : redirect_to(root_url)
   end
 
   def update

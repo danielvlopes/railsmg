@@ -133,13 +133,13 @@ hr {
 #content.users.index .city, #content.users.index .github {
   text-align: center; }
 
-#content.users.show .box h3 {
+#content.users.show .box h3, #content.users.find .box h3 {
   border-bottom: 2px solid #C0D4DD;
   padding-bottom: .5em;
   margin-bottom: .5em;
   color: #51717f;
   text-transform: uppercase; }
-#content.users.show .user {
+#content.users.show .user, #content.users.find .user {
   background: #F6F6F6;
   border-top: 2px solid #FFF;
   border-bottom: 2px solid #FFF;
@@ -152,40 +152,40 @@ hr {
   -webkit-box-shadow: 1px 1px 2px #6c8896;
   margin-bottom: 1em;
   padding: 1em 20px; }
-#content.users.show .gravatar {
+#content.users.show .gravatar, #content.users.find .gravatar {
   float: left;
   margin-right: 1em;
   width: 48px; }
-  #content.users.show .gravatar img {
+  #content.users.show .gravatar img, #content.users.find .gravatar img {
     height: 48px;
     border: 1px solid #FFF;
     width: 48px; }
-#content.users.show .profile {
+#content.users.show .profile, #content.users.find .profile {
   float: left;
   width: 796px; }
-#content.users.show .info {
+#content.users.show .info, #content.users.find .info {
   line-height: 24px;
   margin-bottom: .5em; }
-#content.users.show .using_ruby_since {
+#content.users.show .using_ruby_since, #content.users.find .using_ruby_since {
   background: url(../images/ruby.gif) center right no-repeat;
   float: right;
   padding-right: 40px; }
-#content.users.show .about {
+#content.users.show .about, #content.users.find .about {
   border-top: 1px solid #C2D3DA;
   border-bottom: 1px solid #C2D3DA;
   padding-top: 1em;
   margin-bottom: 1em; }
-  #content.users.show .about .empty {
+  #content.users.show .about .empty, #content.users.find .about .empty {
     text-align: center;
     font-style: italic;
     color: #A0B1B8; }
-#content.users.show ul.links {
+#content.users.show ul.links, #content.users.find ul.links {
   clear: both;
   margin: 0;
   text-align: right; }
-  #content.users.show ul.links li {
+  #content.users.show ul.links li, #content.users.find ul.links li {
     display: inline; }
-#content.users.show ul.projects {
+#content.users.show ul.projects, #content.users.find ul.projects {
   background: #F6F6F6;
   border-top: 2px solid #FFF;
   border-bottom: 2px solid #FFF;
@@ -198,10 +198,10 @@ hr {
   -webkit-box-shadow: 1px 1px 2px #6c8896;
   margin: 0 0 1em;
   padding: 1em 20px 0; }
-  #content.users.show ul.projects li {
+  #content.users.show ul.projects li, #content.users.find ul.projects li {
     display: block;
     list-style: none; }
-  #content.users.show ul.projects h4 {
+  #content.users.show ul.projects h4, #content.users.find ul.projects h4 {
     border-bottom: 1px solid #C1D4DB;
     margin-bottom: .5em;
     padding-bottom: .5em; }

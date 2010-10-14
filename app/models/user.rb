@@ -18,22 +18,24 @@ class User < ActiveRecord::Base
 
   named_scope :with_projects, :include => :projects, :order => 'users.name, projects.name'
   named_scope :active, :conditions => { :active => true }
-  
+
   # attributes
   attr_protected :active, :admin
 
   # validations
-  validates_presence_of :name, :email, :city
+  validates_presence_of :name, :email, :city, :username
   validates_length_of :password, :minimum => 6, :if => :require_password?
+  validates_length_of :username, :minimum => 4
   validates_confirmation_of :password, :if => :require_password?
 
   with_options :allow_blank => true do |u|
     u.validates_length_of :name, :city, :github, :in => 1..255
     u.validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
     u.validates_format_of :github, :with => /^[a-z_0-9]+$/
-    u.validates_uniqueness_of :email, :github, :case_sensitive => false
+    u.validates_format_of :username, :with => /^[a-z_0-9]+$/
+    u.validates_uniqueness_of :email, :github, :username, :case_sensitive => false
   end
-  
+
   after_save :fetch_projects!
 
   # Fetch user projects from Github
@@ -55,7 +57,7 @@ class User < ActiveRecord::Base
   def deliver_signup_confirmation
     Notifier.deliver_signup_confirmation self
   end
-  
+
   def to_s
     name
   end
@@ -63,15 +65,15 @@ class User < ActiveRecord::Base
   def github_url
     "http://github.com/#{github}"
   end
-  
+
   def twitter_url
     "http://twitter.com/#{twitter}"
   end
-  
+
   def email_with_name
     %{"#{name}" <#{email}>}
   end
-  
+
   def self.active! perishable_token
     returning find_using_perishable_token!(perishable_token) do |user|
       user.update_attribute(:active, true) if user

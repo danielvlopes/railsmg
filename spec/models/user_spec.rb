@@ -3,7 +3,7 @@ require 'spec_helper'
 describe User do
   # database
   should_have_columns :name, :github, :email, :crypted_password, :password_salt, :persistence_token,
-                      :perishable_token, :city, :site, :twitter, :type => :string
+                      :perishable_token, :city, :site, :twitter, :username, :type => :string
   should_have_column  :projects_count, :default => 0, :type => :integer
   should_have_column  :using_ruby_since, :type => :integer
   should_have_column  :about, :type => :text
@@ -33,7 +33,7 @@ describe User do
 
   should_allow_values_for :email, 'john@doe.com', 'john.doe@gmail.ru'
   should_not_allow_values_for :email, 'john@doe', 'john.doe'
-  
+
   should_allow_values_for :github, 'john', 'jonh_doe', 'jonh0909'
   should_not_allow_values_for :github, 'jonhn doe', 'john.doe'
 
@@ -63,10 +63,10 @@ describe User do
     user.fetch_projects!
     user.projects.should have(18).records
   end
-  
+
   it 'active! should set active as true' do
     user = User.make
-    
+
     User.active!(user.perishable_token).should eql user
 
     user.reload

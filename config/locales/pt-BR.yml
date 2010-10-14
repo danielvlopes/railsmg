@@ -152,6 +152,7 @@ pt-BR:
         using_ruby_since: "Usando ruby desde"
         city: "Cidade"
         public_email: "E-mail visível para todos?"
+        username: "Apelido (nick)"
       meeting:
         name: "Nome"
         description: "Descrição"
