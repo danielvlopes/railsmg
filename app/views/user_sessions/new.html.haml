@@ -3,7 +3,7 @@
 
   - semantic_form_for @user_session, :url => user_session_path do |f|
     - f.inputs do
-      = f.input :email
+      = f.input :username
       = f.input :password
       = f.input :remember_me, :as => :boolean, :required => false
 
@@ -11,4 +11,4 @@
       = f.commit_button
 
 :javascript
-  document.getElementById('user_session_email').focus();
+  document.getElementById('user_session_username').focus();

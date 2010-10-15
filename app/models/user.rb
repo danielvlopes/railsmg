@@ -54,6 +54,10 @@ class User < ActiveRecord::Base
 
   after_create :deliver_signup_confirmation
 
+  def self.find_by_username_or_email(login)
+    self.find_by_username(login) || self.find_by_email(login)
+  end
+
   def deliver_signup_confirmation
     Notifier.deliver_signup_confirmation self
   end
