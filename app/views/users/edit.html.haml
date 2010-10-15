@@ -1,7 +1,8 @@
 - semantic_form_for @user do |f|
   - f.inputs do
     .box
-      %h2 Login    
+      %h2 Login
+      = f.input :username
       = f.input :email
       = f.input :password
       = f.input :password_confirmation
