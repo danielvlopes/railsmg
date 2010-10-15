@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
   # validations
   validates_presence_of :name, :email, :city, :username
   validates_length_of :password, :minimum => 6, :if => :require_password?
-  validates_length_of :username, :minimum => 4
+  validates_length_of :username, :in => 4..12
   validates_confirmation_of :password, :if => :require_password?
 
   with_options :allow_blank => true do |u|

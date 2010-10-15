@@ -21,14 +21,16 @@ describe User do
   should_have_many :projects, :meetings
 
   # validations
-  should_validate_presence_of :name, :email, :city
+  should_validate_presence_of :name, :email, :city, :username
   should_validate_length_of :password, :minimum => 6, :if => :require_password?
+  should_validate_length_of :username, :in => 4..12
   should_validate_confirmation_of :password, :if => :require_password?
 
   with_options :allow_blank => true do |u|
     u.should_validate_length_of :name, :city, :github, :in => 1..255
     # TODO: remarkable fix: u.should_validate_uniqueness_of :email, :case_sensitive => false
     # TODO: remarkable fix: u.should_validate_uniqueness_of :github, :case_sensitive => false
+    # TODO: remarkable fix: u.should_validate_uniqueness_of :username, :case_sensitive => false
   end
 
   should_allow_values_for :email, 'john@doe.com', 'john.doe@gmail.ru'
