@@ -15,8 +15,8 @@ class UsersController < ApplicationController
   end
 
   def find
-    @user = User.find_by_permalink(params[:permalink])
-    @user.present? ? render(:show) : redirect_to(root_url)
+    @user = User.first(:conditions => {:permalink => params[:permalink]})
+    @user.present? ? render(:show) : raise(ActiveRecord::RecordNotFound)
   end
 
   def update
@@ -38,4 +38,3 @@ protected
     @users ||= User.active.all
   end
 end
-
