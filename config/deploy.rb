@@ -9,7 +9,7 @@ set :branch, "master"
 set :deploy_via, :remote_cache
 
 # SSH SETTINGS
-set :user , "git"
+set :user , "rails"
 set :deploy_to, "/home/rails/#{application}"
 set :shared_directory, "#{deploy_to}/shared"
 set :use_sudo, false
