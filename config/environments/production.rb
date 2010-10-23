@@ -1,6 +1,6 @@
 # Settings specified here will take precedence over those in config/environment.rb
 
-config.gem 'whenever', :version => '0.4.1'
+config.gem 'whenever', :version => '0.6.1'
 
 # The production environment is meant for finished, "live" apps.
 # Code is not reloaded between requests

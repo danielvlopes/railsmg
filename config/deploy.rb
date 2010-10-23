@@ -47,7 +47,7 @@ namespace :deploy do
 
   desc "Update the crontab file"
   task :update_crontab, :roles => :db do
-    run "cd #{release_path} && whenever --update-crontab #{application}"
+    run "cd #{current_path} && /opt/ruby-enterprise/bin/whenever --update-crontab #{application}"
   end
 end
 
@@ -67,12 +67,12 @@ namespace :assets do
   task :jammit, :roles => :web do
     root_path = File.join(File.dirname(__FILE__), "..")
     run_locally "cd #{root_path} && jammit"
-    upload "#{root_path}/public/assets", "#{current_release}/public", :via => :scp, :recursive => true
+    upload "#{root_path}/public/assets", "#{release_path}/public", :via => :scp, :recursive => true
   end
 
   task :symlink, :roles => :app do
-    run "test -d #{current_path}/public/system || rm -rf #{current_path}/public/system"
-    run "ln -nfs #{shared_path}/system #{current_path}/public/system"
+    run "test -d #{current_path}/public/system || rm -rf #{release_path}/public/system"
+    run "ln -nfs #{shared_path}/system #{release_path}/public/system"
   end
 end
 
