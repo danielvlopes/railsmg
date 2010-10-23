@@ -42,7 +42,7 @@
             exibido em <strong>#{l(meeting.start_on)}</strong> por <strong>#{meeting.user.name}</strong>
 
           %p
-            = truncate(meeting.description, 200)
+            = truncate(meeting.description, :length => 200)
 
           %p
             = link_to "VEJA MAIS", meeting
