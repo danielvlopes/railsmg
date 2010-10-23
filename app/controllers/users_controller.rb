@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   end
 
   def find
-    @user = User.find_by_username(params[:username])
+    @user = User.find_by_permalink(params[:permalink])
     @user.present? ? render(:show) : redirect_to(root_url)
   end
 

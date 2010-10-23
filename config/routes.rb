@@ -16,9 +16,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resource :user_session, :as => 'session'
 
-  # Home
   map.root :controller => 'home', :action => 'index'
 
-  map.connect "/:username", :controller => 'users', :action => 'find'
+  map.connect "/:permalink", :controller => 'users', :action => 'find'
 end
 

@@ -3,6 +3,7 @@ require 'machinist/active_record'
 User.blueprint do
   name              'Gabriel Sobrinho'
   email             'gabriel@example.com'
+  permalink         'sobrinho'
   github            'sobrinho'
   city              'Belo Horizonte'
   password          { '123456' }
