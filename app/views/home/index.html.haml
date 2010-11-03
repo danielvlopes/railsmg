@@ -3,29 +3,21 @@
     .box
       %h2 Encontros
 
-      / %p
-      /   No sábado (28/08/2010) teremos uma palestra do Antônio Roberto (Ton) na UNA
-      /   sobre <strong>Cramp e Websockets</strong>.
-      / 
-      / %p
-      /   Chegada no local a partir das 9:30 e palestra começando as 10:00.
-      /   Endereço é UNA Campus Barro Preto Rua Goitacazes, 1159, bairro Barro Preto – BH - MG.
-      / 
-      / %p
-      /   A palestra terá duração aproximada de 50 minutos seguido de um <strong>DOJO</strong> em Ruby para resolução
-      /   de alguns problemas simples e primeiro contato com a linguagem e também <strong>TDD</strong>.
-      / 
-      / %p
-      /   %strong
-      /     Para participar é gratuito mas deve se inscrever neste neste link:
-      /     #{link_to "bit.ly/railsmg-cramp", "http://bit.ly/railsmg-cramp"}
+      %p
+        No sábado (13/11/2010) ocorrerá em BH o Café Ágil da Thoughtworks. O evento contará com 3 palestras pela manhã
+        e diversos DOJOs, incluindo um de Ruby. O RailsMG estará presente no evento e você também deveria comparecer ;)
+
+      %p
+        %strong
+          Para saber mais sobre o evento acesse o link abaixo:
+          #{link_to "thoughtworks.com/cafe-agil-em-belo-horizonte", "http://www.thoughtworks.com/cafe-agil-em-belo-horizonte"}
 
       / %p
       /   Nos encontramos mensalmente no segundo andar do restaurante Takê (#{link_to_take}).
-      
+
       %p
         Todos os encontros são abertos ao público e não é necessário inscrição, basta aparecer.
-      
+
       %p
         - if @next_meeting.present?
           <strong>Próximo encontro: #{l @next_meeting.start_on} as 19:30</strong>
